@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Orbitron:wght@500&display=swap");
+
+.sitioCompleto {
+  background: rgb(77, 75, 99);
+}
+
+.juego {
+  font-family: "Orbitron", sans-serif;
+}
+
+/* Agregar efecto Neon */
+.verde {
+  font-family: "Orbitron", sans-serif;
+  text-shadow: 0 0 5px #46ad30, 0 0 10px #46ad30, 0 0 20px #46ad30,
+    0 0 40px #46ad30, 0 0 80px #46ad30, 0 0 90px #46ad30, 0 0 100px #46ad30;
+}
+
+/* Ahorcado */
+
+#ahorcado {
+  height: 220px;
+  width: 200px;
+  background-image: url("../img/hangman-game_pm-1024x212.png");
+}
