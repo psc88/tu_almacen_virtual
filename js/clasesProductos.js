@@ -7,4 +7,6 @@ export class Producto {
         this.url = url;
         this.categoria = categoria;
     }
+
+    
 }
