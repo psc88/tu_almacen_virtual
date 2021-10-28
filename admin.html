@@ -87,7 +87,7 @@
               />
               <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
-  
+
             <div class="mb-3">
               <label for="nombreProducto" class="form-label">Producto</label>
               <input
@@ -99,7 +99,9 @@
               <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="mb-3">
-              <label for="descripcionProducto" class="form-label">Descripcion</label>
+              <label for="descripcionProducto" class="form-label"
+                >Descripcion</label
+              >
               <input
                 id="descripcionProducto"
                 type="text"
@@ -110,10 +112,10 @@
             <div class="mb-3">
               <label for="cantidadProducto" class="form-label">Cantidad</label>
               <input
-              type="text"
-              class="form-control"
-              id="cantidadProducto"
-              placeholder="Ingrese la cantidad"
+                type="text"
+                class="form-control"
+                id="cantidadProducto"
+                placeholder="Ingrese la cantidad"
               />
               <div class="invalid-feedback">
                 Este campo es obligatorio. Cantidad maxima 999.
@@ -121,17 +123,26 @@
             </div>
             <div class="mb-3">
               <label for="urlProducto" class="form-label">URL</label>
-              <input type="text" class="form-control" id="urlProducto" placeholder="https://"/>
+              <input
+                type="text"
+                class="form-control"
+                id="urlProducto"
+                placeholder="https://"
+              />
             </div>
             <div class="mb-3">
-              <label for="cagetoriaProducto" class="form-label">Categoria</label>
+              <label for="cagetoriaProducto" class="form-label"
+                >Categoria</label
+              >
               <input
                 id="cagetoriaProducto"
                 type="text"
                 class="form-control"
                 placeholder="mix, frutas deshidratadas, inflados, especias "
               />
-              <div class="invalid-feedback">Eliga mix, frutas, inflados o especias</div>
+              <div class="invalid-feedback">
+                Eliga mix, frutas, inflados o especias
+              </div>
             </div>
             <button class="btn btn-primary" type="submit">Guardar</button>
             <div
@@ -142,6 +153,72 @@
               Revise la informacion, debe completar todos los datos
             </div>
           </form>
+        </article>
+      </section>
+      <section class="container">
+        <article class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">URL</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaMix">
+            </tbody>
+          </table>
+        </article>
+        <article class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">URL</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaFrutas">
+            </tbody>
+          </table>
+        </article>
+        <article class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">URL</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaInflados">
+            </tbody>
+          </table>
+        </article>
+        <article class="table-responsive">
+          <table class="table table-dark table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Codigo</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Descripción</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">URL</th>
+                <th scope="col" class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tablaEspecias">
+            </tbody>
+          </table>
         </article>
       </section>
     </main>
