@@ -60,7 +60,7 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white ms-3" href="#"
+                <a class="nav-link text-white ms-3" href="nosotros.html"
                   >Acerca de nosotros</a
                 >
               </li>
@@ -74,62 +74,75 @@
         <h1 class="text-center my-5">Administrador de Productos</h1>
       </section>
       <section class="container bg-white my-5">
-        <form class="p-5" id="formularioProducto">
-          <div class="mb-3">
-            <label for="" class="form-label">Codigo</label>
-            <input
-              id="codigoId"
-              type="text"
-              class="form-control"
-              placeholder="Ingrese un codigo"
-            />
-            <div class="invalid-feedback">Este campo es obligatorio</div>
-          </div>
-
-          <div class="mb-3">
-            <label for="" class="form-label">Producto</label>
-            <input
-              id="nombreProducto"
-              type="text"
-              class="form-control"
-              placeholder="Ingrese nombre del producto"
-            />
-            <div class="invalid-feedback">Este campo es obligatorio</div>
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Descripcion</label>
-            <input
-              id="descripcionProducto"
-              type="text"
-              class="form-control"
-              placeholder="Ingrese la descripcion del producto"
-            />
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">Cantidad</label>
-            <input
+        <article>
+          <h2 class="text-center pt-3">Producto Varios</h2>
+          <form class="p-5" id="formularioProducto">
+            <div class="mb-3">
+              <label for="codigoId" class="form-label">Codigo</label>
+              <input
+                id="codigoId"
+                type="text"
+                class="form-control"
+                placeholder="Ingrese un codigo"
+              />
+              <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+  
+            <div class="mb-3">
+              <label for="nombreProducto" class="form-label">Producto</label>
+              <input
+                id="nombreProducto"
+                type="text"
+                class="form-control"
+                placeholder="Ingrese nombre del producto"
+              />
+              <div class="invalid-feedback">Este campo es obligatorio</div>
+            </div>
+            <div class="mb-3">
+              <label for="descripcionProducto" class="form-label">Descripcion</label>
+              <input
+                id="descripcionProducto"
+                type="text"
+                class="form-control"
+                placeholder="Ingrese la descripcion del producto"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="cantidadProducto" class="form-label">Cantidad</label>
+              <input
               type="text"
               class="form-control"
               id="cantidadProducto"
               placeholder="Ingrese la cantidad"
-            />
-            <div class="invalid-feedback">
-              Este campo es obligatorio. Cantidad maxima 999.
+              />
+              <div class="invalid-feedback">
+                Este campo es obligatorio. Cantidad maxima 999.
+              </div>
             </div>
-          </div>
-          <div class="mb-3">
-            <label for="" class="form-label">URL</label>
-            <input type="text" class="form-control" id="urlProducto" />
-          </div>
-          <button class="btn btn-primary" type="submit">Guardar</button>
-          <div
-            class="alert alert-danger mt-4 d-none"
-            role="alert"
-            id="mensajeAlerta"
-          >
-            Revise la informacion, debe completar todos los datos
-          </div>
-        </form>
+            <div class="mb-3">
+              <label for="urlProducto" class="form-label">URL</label>
+              <input type="text" class="form-control" id="urlProducto" placeholder="https://"/>
+            </div>
+            <div class="mb-3">
+              <label for="cagetoriaProducto" class="form-label">Categoria</label>
+              <input
+                id="cagetoriaProducto"
+                type="text"
+                class="form-control"
+                placeholder="mix, frutas deshidratadas, inflados, especias "
+              />
+              <div class="invalid-feedback">Eliga mix, frutas, inflados o especias</div>
+            </div>
+            <button class="btn btn-primary" type="submit">Guardar</button>
+            <div
+              class="alert alert-danger mt-4 d-none"
+              role="alert"
+              id="mensajeAlerta"
+            >
+              Revise la informacion, debe completar todos los datos
+            </div>
+          </form>
+        </article>
       </section>
     </main>
     <footer class="bgIndex text-white py-3 fontNav textoCentrado">
