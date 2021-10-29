@@ -147,7 +147,20 @@ function crearFilaProductosEspecias(itemProducto){
 //** Funcion para cargar los datos en la tabla del localstorage **//
 function cargaInicialTabla(){
   listaProductosMix = JSON.parse(localStorage.getItem("listaProductoMix")) || [];
+  listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductoFrutas")) || [];
+  listaProductosInflados = JSON.parse(localStorage.getItem("listaProductoInflados")) || [];
+  listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductoEspecias")) || [];
+
   listaProductosMix.forEach((itemProducto) => {
-    crearFilaProductos(itemProducto);
+    crearFilaProductosMix(itemProducto);
+  });
+  listaProductosFrutas.forEach((itemProducto) => {
+    crearFilaProductosFrutas(itemProducto);
+  });
+  listaProductosInflados.forEach((itemProducto) => {
+    crearFilaProductosInflado(itemProducto);
+  });
+  listaProductosEspecias.forEach((itemProducto) => {
+    crearFilaProductosEspecias(itemProducto);
   });
 }
