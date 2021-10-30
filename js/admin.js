@@ -105,7 +105,7 @@ function crearFilaProductosMix(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>

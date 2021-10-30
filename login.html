@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="pagina dedicada a la comercializacion de Productos de almacen"
+    />
+    <meta name="keywords" content="almacen, delivery, comprar" />
+    <meta
+      name="author"
+      content="Pablo Sebastian Castillo, Liliana Cerda Benavente, Enrico Palermo, Carlos Carral"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="/img/canasto.png" sizes="64x64" />
+    <title>Tu Almacen Virtual</title>
+    <script
+      src="https://kit.fontawesome.com/012f3cd5dc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bgSeccionProductos">
+    <header>
+      <nav class="contenedor navbar navbar-expand-lg navbar-dark bgIndex">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/img/logo tu almacen.svg"
+              alt="logo tu almacen virtual"
+              class="wLogo my-3"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTuAlmacen"
+            aria-controls="navbarTuAlmacen"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTuAlmacen">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white ms-3 active"
+                  href="./index.html"
+                  aria-current="page"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white ms-3" aria-current="page" href="./crearCuenta.html"
+                  >Crear cuenta</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white ms-3" href="./error.html"
+                  >¿Dudas? Contactanos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="textoCentrado d-flex justify-content-center">
+      <section class="fondoLogin my-5 w-50 text-center">
+        <div class="card">
+          <div class="card-body">
+            <article class="row d-flex align-items-center">
+              <hr class="col w-25" />
+              <i class="fas fa-user my-4 col fs-2 w-50"
+                ><p>Iniciar Sesion</p></i
+              >
+              <hr class="col w-25" />
+            </article>
+            <form>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="inputEmail"
+                  aria-describedby="emailHelp"
+                  placeholder="Email"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="exampleInputPassword1"
+                  placeholder="Contraseña"
+                />
+              </div>
+              <a href="#" class="btn btn-primary fs-5">Ingresar</a>
+              <hr />
+              <p>No tienes cuenta?<a href="#">Crear cuenta</a></p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
+      <section class="container mt-3">
+        <article class="row justify-content-center">
+          <div class="col-sm-12 col-md-4 col-footer mb-4">
+            <div>
+              <a href="index.html">
+                <img
+                  src="/img/logo footer.svg"
+                  alt="logo tu almacen virtual "
+                  class="w-25 logo-footer"
+                />
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
+            <h5>Navegacion</h5>
+            <div>
+              <ul class="navbar-nav mb-2">
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="index.html">Inicio</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="admin.html">Admin</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link text-white" href="nosotros.html"
+                    >Acerca de nosotros</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
+            <h5>Seguinos en nuestras redes:</h5>
+            <div class="col-sm-12 col-md-10 text-center">
+              <a
+                href="./error.html"
+                target="_blank"
+                class="text-decoration-none"
+              >
+                <i class="fab fa-instagram-square text-white fa-2x"></i>
+              </a>
+              <a
+                href="./error.html"
+                target="_blank"
+                class="ms-2 text-decoration-none"
+              >
+                <i class="fab fa-facebook-square text-white fa-2x"></i>
+              </a>
+              <a
+                href="./error.html"
+                target="_blank"
+                class="ms-2 text-decoration-none"
+              >
+                <i class="fab fa-twitter-square text-white fa-2x"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      </section>
+      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
+    </footer>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
