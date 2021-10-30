@@ -51,21 +51,35 @@
   width: 200px;
 }
 
-@media all and (max-width: 576px) {
-  .textoCentrado {
-    text-align: center;
-  }
+.textoCentrado {
+  text-align: center;
 }
 
-@media all and (min-width: 767px) and (max-width: 991px) {
-  .textoCentrado {
-    text-align: center;
-  }
-}
 
 /* pagina principal */
 
 .tituloPrincipal {
   font-family: 'Inconsolata', monospace;
   font-size: 50px;
+}
+
+/* medias query */
+@media all and (min-width: 1024px) {
+  .navBarResponsive {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .navBarResponsive {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+}
+
+@media all and (max-width: 767){
+
 }
