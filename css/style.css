@@ -51,21 +51,47 @@
   width: 200px;
 }
 
-@media all and (max-width: 576px) {
-  .textoCentrado {
-    text-align: center;
-  }
-}
-
-@media all and (min-width: 767px) and (max-width: 991px) {
-  .textoCentrado {
-    text-align: center;
-  }
-}
-
 /* pagina principal */
 
 .tituloPrincipal {
   font-family: 'Inconsolata', monospace;
   font-size: 50px;
 }
+
+/* backGround Login/Create */
+.fondoLoginCreate{
+  background-color:rgba(50, 9, 199, 0.699);
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+}
+
+/* medias query */
+@media all and (max-width: 1023px) {
+  .navBarResponsive {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  .textoCentrado{
+    text-align: center;
+  }
+}
+
+@media all and (min-width: 768px) and (max-width: 1024px) {
+  .navBarResponsive {
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+  }
+  .textoCentrado{
+    text-align: center;
+  }
+}
+
+
+

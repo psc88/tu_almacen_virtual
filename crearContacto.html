@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="pagina dedicada a la comercializacion de Productos de almacen"
+    />
+    <meta name="keywords" content="almacen, delivery, comprar" />
+    <meta
+      name="author"
+      content="Pablo Sebastian Castillo, Liliana Cerda Benavente, Enrico Palermo, Carlos Carral"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="icon" type="image/png" href="/img/canasto.png" sizes="64x64" />
+    <title>Tu Almacen Virtual</title>
+    <script
+      src="https://kit.fontawesome.com/012f3cd5dc.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body class="bgSeccionProductos fondoLoginCreate">
+    <header>
+      <nav class="contenedor navbar navbar-expand-lg navbar-dark bgIndex">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img
+              src="/img/logo tu almacen.svg"
+              alt="logo tu almacen virtual"
+              class="wLogo my-3"
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTuAlmacen"
+            aria-controls="navbarTuAlmacen"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarTuAlmacen">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white ms-3 active"
+                  href="./index.html"
+                  aria-current="page"
+                  >Inicio</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link text-white ms-3"
+                  aria-current="page"
+                  href="./login.html"
+                  >ingresar</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white ms-3" href="./error.html"
+                  >¿Dudas? Contactanos</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section>
+        <article class="d-flex justify-content-center">
+          <article
+            class="row align-items-center text text-center w-75 text-white mt-5"
+          >
+            <hr class="col w-25 ms-4" />
+            <i class="fas fa-user my-4 col fs-2 w-50"><p>Crea tu cuenta</p></i>
+            <hr class="col w-25 me-4" />
+          </article>
+        </article>
+        <article class="d-flex justify-content-center">
+          <form class="p-4 w-75" id="formularioProducto">
+            <div class="row">
+              <div class="mb-3 col-lg-6">
+                <label for="nombreId" class="form-label">Nombre</label>
+                <input
+                  id="nombreId"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese nombre"
+                />
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+              <div class="mb-3 col-lg-6">
+                <label for="apellidoId" class="form-label">Apellido</label>
+                <input
+                  id="apellidoId"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese apellido"
+                />
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="correoId" class="form-label"
+                >Correo Electronico</label
+              >
+              <input
+                id="correoId"
+                type="mail"
+                class="form-control"
+                placeholder="usuario@"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="passId" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passId"
+                placeholder="Ingrese Contraseña"
+              />
+              <div class="invalid-feedback">
+                Este campo es obligatorio.
+              </div>
+            </div>
+            <article class="d-flex justify-content-center pt-3">
+                <a href="./index.html" class="btn btn-primary fs-5" type="submit">Confirmar</a>
+                <div
+                  class="alert alert-danger mt-4 d-none"
+                  role="alert"
+                  id="mensajeAlerta"
+                >
+                  Revise la informacion, debe completar todos los datos
+                </div>
+            </article>
+          </form>
+        </article>
+      </section>
+    </main>
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>
