@@ -10,9 +10,9 @@ import { Producto } from "./clasesProductos.js";
 
 //** Extracion de los imput del los Productos **//
 let codigoForm = document.querySelector("#codigoId");
-let cantidadForm = document.querySelector("#cantidadProducto");
 let nombreProducto = document.querySelector("#nombreProducto");
 let descripcionProducto = document.querySelector("#descripcionProducto");
+let cantidadForm = document.querySelector("#cantidadProducto");
 let urlForm = document.querySelector("#urlProducto");
 let categoria = document.querySelector("#cagetoriaProducto");
 let formulario = document.querySelector("#formularioProducto");
@@ -25,22 +25,12 @@ let listaProductosEspecias = [];
 cargaInicialTabla();
 
 //** Agregado de eventos blur (foco) **//
-codigoForm.addEventListener("blur", () => {
-  validarCodigoProducto(codigoForm);
-});
-cantidadForm.addEventListener("blur", () => {
-  validarCantidadProductos(cantidadForm);
-});
-urlForm.addEventListener("blur", () => {
-  validarURL(urlForm);
-});
-nombreProducto.addEventListener("blur", () => {
-  validarCampo(nombreProducto);
-});
-descripcionProducto.addEventListener("blur", () => {
-  validarCampo(descripcionProducto);
-});
-categoria.addEventListener("blur", () => validarCategoria(categoria));
+codigoForm.addEventListener("blur", () => {validarCodigoProducto(codigoForm)});
+nombreProducto.addEventListener("blur", () => {validarCampo(nombreProducto)});
+descripcionProducto.addEventListener("blur", () => {validarCampo(descripcionProducto)});
+cantidadForm.addEventListener("blur", () => {validarCantidadProductos(cantidadForm)});
+urlForm.addEventListener("blur", () => {validarURL(urlForm)});
+categoria.addEventListener("blur", () => validarCategoria(categoria))
 formulario.addEventListener("submit", guardarProducto);
 
 //** guardar producto en localstorage y crear tabla **//
@@ -54,24 +44,15 @@ function guardarProducto(e) {
 }
 
 //** Agregado de producto segun la categoria **//
-function agregarProducto() {
-  let productoNuevo = new Producto(
-    codigoForm.value,
-    cantidadForm.value,
-    nombreProducto.value,
-    descripcionProducto.value,
-    urlForm.value,
-    categoria.value
-  );
-  switch (productoNuevo.categoria) {
-    case "mix":
-      listaProductosMix.push(productoNuevo);
-      localStorage.setItem(
-        "listaProductoMix",
-        JSON.stringify(listaProductosMix)
-      );
-      limpiarFormulario();
-      crearFilaProductosMix(productoNuevo);
+function agregarProducto(){
+  let productoNuevo = new Producto(codigoForm.value, nombreProducto.value, descripcionProducto.value, cantidadForm.value, urlForm.value, categoria.value);
+  switch (productoNuevo.categoria){
+    case 'mix':
+        listaProductosMix.push(productoNuevo);
+        localStorage.setItem("listaProductoMix", JSON.stringify(listaProductosMix));
+        limpiarFormulario();
+        crearFilaProductosMix(productoNuevo);
+
       break;
     case "frutas":
       listaProductosFrutas.push(productoNuevo);
@@ -117,7 +98,8 @@ function limpiarFormulario() {
 //** Funcion para crear la fila en la tabla **//
 function crearFilaProductosMix(itemProducto) {
   let tabla = document.querySelector("#tablaMix");
-  console.log(itemProducto);
+
+
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
@@ -132,7 +114,7 @@ function crearFilaProductosMix(itemProducto) {
 }
 function crearFilaProductosFrutas(itemProducto) {
   let tabla = document.querySelector("#tablaFrutas");
-  console.log(itemProducto);
+
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
@@ -147,7 +129,8 @@ function crearFilaProductosFrutas(itemProducto) {
 }
 function crearFilaProductosInflado(itemProducto) {
   let tabla = document.querySelector("#tablaInflados");
-  console.log(itemProducto);
+
+
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
@@ -162,7 +145,6 @@ function crearFilaProductosInflado(itemProducto) {
 }
 function crearFilaProductosEspecias(itemProducto) {
   let tabla = document.querySelector("#tablaEspecias");
-  console.log(itemProducto);
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
