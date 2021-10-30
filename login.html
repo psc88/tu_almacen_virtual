@@ -22,7 +22,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bgSeccionProductos">
+  <body class="fondoLoginCreate">
     <header>
       <nav class="contenedor navbar navbar-expand-lg navbar-dark bgIndex">
         <div class="container">
@@ -74,101 +74,36 @@
     </header>
     <main class="container">
       <section class="text-center mt-5">
-        <article class="row d-flex align-items-center">
-          <hr class="col w-25 ms-3" />
+        <article class="row d-flex align-items-center text-white">
+          <hr class="col w-50 ms-5" />
           <i class="fas fa-user my-4 col fs-2 w-50"><p>Iniciar Sesion</p></i>
-          <hr class="col w-25 me-3" />
+          <hr class="col w-25 me-5" />
         </article>
         <form>
-          <div class="mb-3">
+          <div class="mb-3 d-flex justify-content-center mt-3">
             <input
               type="email"
-              class="form-control"
+              class="form-control w-50"
               id="inputEmail"
               aria-describedby="emailHelp"
               placeholder="Email"
             />
           </div>
-          <div class="mb-3">
+          <div class="mb-3 d-flex justify-content-center mt-5">
             <input
               type="password"
-              class="form-control"
+              class="form-control w-50"
               id="exampleInputPassword1"
               placeholder="Contraseña"
             />
           </div>
-          <a href="#" class="btn btn-primary fs-5">Ingresar</a>
-          <hr />
-          <p>
-            No tienes cuenta?<a href="./crearContacto.html">Crear cuenta</a>
+          <a href="#" class="btn btn-primary fs-5 mt-4">Ingresar</a>
+          <p class="mt-4 text-light">
+            No tienes cuenta?<a href="./crearContacto.html" class="fs-5 text-decoration-none ps-2">Crear cuenta</a>
           </p>
         </form>
       </section>
     </main>
-    <section class="navBarResponsive">
-        <footer class="bgIndex text-white py-3 fontNav textoCentrado ">
-          <section class="container mt-3">
-            <article class="row justify-content-center">
-              <div class="col-sm-12 col-md-4 col-footer mb-4">
-                <div>
-                  <a href="index.html">
-                    <img
-                      src="/img/logo footer.svg"
-                      alt="logo tu almacen virtual "
-                      class="w-25 logo-footer"
-                    />
-                  </a>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-                <h5>Navegacion</h5>
-                <div>
-                  <ul class="navbar-nav mb-2">
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="index.html">Inicio</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="admin.html">Admin</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link text-white" href="nosotros.html"
-                        >Acerca de nosotros</a
-                      >
-                    </li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-                <h5>Seguinos en nuestras redes:</h5>
-                <div class="col-sm-12 col-md-10 text-center">
-                  <a
-                    href="./error.html"
-                    target="_blank"
-                    class="text-decoration-none"
-                  >
-                    <i class="fab fa-instagram-square text-white fa-2x"></i>
-                  </a>
-                  <a
-                    href="./error.html"
-                    target="_blank"
-                    class="ms-2 text-decoration-none"
-                  >
-                    <i class="fab fa-facebook-square text-white fa-2x"></i>
-                  </a>
-                  <a
-                    href="./error.html"
-                    target="_blank"
-                    class="ms-2 text-decoration-none"
-                  >
-                    <i class="fab fa-twitter-square text-white fa-2x"></i>
-                  </a>
-                </div>
-              </div>
-            </article>
-          </section>
-          <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
-        </footer>
-    </section>
     <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>

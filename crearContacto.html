@@ -22,7 +22,7 @@
       crossorigin="anonymous"
     ></script>
   </head>
-  <body class="bgSeccionProductos">
+  <body class="bgSeccionProductos fondoLoginCreate">
     <header>
       <nav class="contenedor navbar navbar-expand-lg navbar-dark bgIndex">
         <div class="container">
@@ -55,8 +55,11 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white ms-3" aria-current="page" href="./crearContacto.html"
-                  >Crear cuenta</a
+                <a
+                  class="nav-link text-white ms-3"
+                  aria-current="page"
+                  href="./login.html"
+                  >ingresar</a
                 >
               </li>
               <li class="nav-item">
@@ -69,105 +72,78 @@
         </div>
       </nav>
     </header>
-    <main class="textoCentrado d-flex justify-content-center">
-      <section class="fondoLogin my-5 w-50 text-center">
-        <div class="card">
-          <div class="card-body">
-            <article class="row d-flex align-items-center">
-              <hr class="col w-25" />
-              <i class="fas fa-user my-4 col fs-2 w-50"
-                ><p>Iniciar Sesion</p></i
+    <main>
+      <section>
+        <article class="d-flex justify-content-center">
+          <article
+            class="row align-items-center text text-center w-75 text-white mt-5"
+          >
+            <hr class="col w-25 ms-4" />
+            <i class="fas fa-user my-4 col fs-2 w-50"><p>Crea tu cuenta</p></i>
+            <hr class="col w-25 me-4" />
+          </article>
+        </article>
+        <article class="d-flex justify-content-center">
+          <form class="p-4 w-75" id="formularioProducto">
+            <div class="row">
+              <div class="mb-3 col-lg-6">
+                <label for="nombreId" class="form-label">Nombre</label>
+                <input
+                  id="nombreId"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese nombre"
+                />
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+              <div class="mb-3 col-lg-6">
+                <label for="apellidoId" class="form-label">Apellido</label>
+                <input
+                  id="apellidoId"
+                  type="text"
+                  class="form-control"
+                  placeholder="Ingrese apellido"
+                />
+                <div class="invalid-feedback">Este campo es obligatorio</div>
+              </div>
+            </div>
+            <div class="mb-3">
+              <label for="correoId" class="form-label"
+                >Correo Electronico</label
               >
-              <hr class="col w-25" />
+              <input
+                id="correoId"
+                type="mail"
+                class="form-control"
+                placeholder="usuario@"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="passId" class="form-label">Contraseña</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passId"
+                placeholder="Ingrese Contraseña"
+              />
+              <div class="invalid-feedback">
+                Este campo es obligatorio.
+              </div>
+            </div>
+            <article class="d-flex justify-content-center pt-3">
+                <a href="./index.html" class="btn btn-primary fs-5" type="submit">Confirmar</a>
+                <div
+                  class="alert alert-danger mt-4 d-none"
+                  role="alert"
+                  id="mensajeAlerta"
+                >
+                  Revise la informacion, debe completar todos los datos
+                </div>
             </article>
-            <form>
-              <div class="mb-3">
-                <input
-                  type="email"
-                  class="form-control"
-                  id="inputEmail"
-                  aria-describedby="emailHelp"
-                  placeholder="Email"
-                />
-              </div>
-              <div class="mb-3">
-                <input
-                  type="password"
-                  class="form-control"
-                  id="exampleInputPassword1"
-                  placeholder="Contraseña"
-                />
-              </div>
-              <a href="#" class="btn btn-primary fs-5">Ingresar</a>
-              <hr />
-              <p>No tienes cuenta?<a href="./crearContacto.html">Crear cuenta</a></p>
-            </form>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
-      <section class="container mt-3">
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-4 col-footer mb-4">
-            <div>
-              <a href="index.html">
-                <img
-                  src="/img/logo footer.svg"
-                  alt="logo tu almacen virtual "
-                  class="w-25 logo-footer"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-            <h5>Navegacion</h5>
-            <div>
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="admin.html">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="nosotros.html"
-                    >Acerca de nosotros</a
-                  >
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-            <h5>Seguinos en nuestras redes:</h5>
-            <div class="col-sm-12 col-md-10 text-center">
-              <a
-                href="./error.html"
-                target="_blank"
-                class="text-decoration-none"
-              >
-                <i class="fab fa-instagram-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-facebook-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-twitter-square text-white fa-2x"></i>
-              </a>
-            </div>
-          </div>
+          </form>
         </article>
       </section>
-      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
-    </footer>
+    </main>
     <script src="/js/bootstrap.min.js"></script>
   </body>
 </html>
