@@ -14,6 +14,8 @@ let listaProductosMix = [];
 let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
+let productoExistente = false;
+let botonMix = document.querySelector("#mix")
 
 
 //** llamado de la funcion para carga inicial de la tabla **//
@@ -32,10 +34,13 @@ formulario.addEventListener("submit", guardarProducto);
 function guardarProducto(e){
   e.preventDefault();
   if(validarGeneralForm()){
+    if(productoExistente === false){
     agregarProducto(); 
   }else{
-    console.log("aqui no debo hacer nada");
+    console.log("aca estamos")
+    actualizarProductos(categoria.value)
   }
+}
 }
 
 //** Agregado de producto segun la categoria **//
@@ -91,7 +96,7 @@ function crearFilaProductosMix(itemProducto){
     <td>${itemProducto.cantidad}</td>
     <td>${itemProducto.url}</td>
     <td class="text-center">
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
+      <button class="btn btn-warning mt-2" id="mix" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
     </td>
   </tr>`
@@ -105,7 +110,7 @@ function crearFilaProductosFrutas(itemProducto){
     <td>${itemProducto.cantidad}</td>
     <td>${itemProducto.url}</td>
     <td class="text-center">
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
+      <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
     </td>
   </tr>`
@@ -119,7 +124,7 @@ function crearFilaProductosInflado(itemProducto){
     <td>${itemProducto.cantidad}</td>
     <td>${itemProducto.url}</td>
     <td class="text-center">
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
+      <button class="btn btn-warning mt-2" id="inf" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
     </td>
   </tr>`
@@ -133,7 +138,7 @@ function crearFilaProductosEspecias(itemProducto){
     <td>${itemProducto.cantidad}</td>
     <td>${itemProducto.url}</td>
     <td class="text-center">
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
+      <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
     </td>
   </tr>`
@@ -159,4 +164,143 @@ function cargaInicialTabla(){
   listaProductosEspecias.forEach((itemProducto) => {
     crearFilaProductosEspecias(itemProducto);
   });
+}
+// se prepara la edicion por categoria
+
+  window.prepararEdicion = (categoriaP,codigo)=>{
+    switch (categoriaP){
+      case 'mix':
+        let productoBuscado = listaProductosMix.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoForm.value = productoBuscado.codigo
+          cantidadForm.value = productoBuscado.cantidad
+          descripcionProducto.value = productoBuscado.descripcion
+          nombreProducto.value = productoBuscado.producto
+          urlForm.value = productoBuscado.url
+          categoria.value = productoBuscado.categoria
+          productoExistente = true;
+        break;
+      case 'frutas':
+        let productoBuscado2 = listaProductosFrutas.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoForm.value = productoBuscado2.codigo
+          cantidadForm.value = productoBuscado2.cantidad
+          descripcionProducto.value = productoBuscado2.descripcion
+          nombreProducto.value = productoBuscado2.producto
+          urlForm.value = productoBuscado2.url
+          categoria.value = productoBuscado2.categoria
+          productoExistente = true;
+        break;
+      case 'inflados':
+        let productoBuscado3 = listaProductosInflados.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoForm.value = productoBuscado3.codigo
+          cantidadForm.value = productoBuscado3.cantidad
+          descripcionProducto.value = productoBuscado3.descripcion
+          nombreProducto.value = productoBuscado3.producto
+          urlForm.value = productoBuscado3.url
+          categoria.value = productoBuscado3.categoria
+          productoExistente = true;
+        break;
+      case 'especias':
+        let productoBuscado4 = listaProductosEspecias.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoForm.value = productoBuscado4.codigo
+          cantidadForm.value = productoBuscado4.cantidad
+          descripcionProducto.value = productoBuscado4.descripcion
+          nombreProducto.value = productoBuscado4.producto
+          urlForm.value = productoBuscado4.url
+          categoria.value = productoBuscado4.categoria
+          productoExistente = true;
+        break;
+    }
+  }
+
+
+  
+function actualizarProductos(categoria){
+  switch(categoria){
+    case 'mix':
+      let posicion = listaProductosMix.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
+  console.log(posicion)
+  // modificar los datos de esa posision
+  listaProductosMix[posicion].producto = nombreProducto.value
+  listaProductosMix[posicion].cantidad = cantidadForm.value
+  listaProductosMix[posicion].descripcion = descripcionProducto.value
+  listaProductosMix[posicion].url = urlForm.value
+  // actualizar LS
+  localStorage.setItem("listaProductosMix",JSON.stringify(listaProductosMix))
+  // volver a dibuajar tabla
+  borrarTablaMix()
+  listaProductosMix.forEach((itemProducto)=>{crearFilaProductosMix(itemProducto)})
+  limpiarFormulario()
+    break;
+    case 'frutas':
+      let posicion2 = listaProductosFrutas.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
+  console.log(posicion)
+  // modificar los datos de esa posision
+  listaProductosFrutas[posicion2].producto = nombreProducto.value
+  listaProductoFrutas[posicion2].cantidad = cantidadForm.value
+  listaProductosFrutas[posicion2].descripcion = descripcionProducto.value
+  listaProductosFrutas[posicion2].url = urlForm.value
+  // actualizar LS
+  localStorage.setItem("listaProductosFrutas",JSON.stringify(listaProductosFrutas))
+  // volver a dibuajar tabla
+  borrarTablaFrutas()
+  listaProductosFrutas.forEach((itemProducto)=>{crearFilaProductosFrutas(itemProducto)})
+  limpiarFormulario()
+    break;
+    case 'inflados':
+      let posicion3 = listaProductosInflados.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
+
+  // modificar los datos de esa posision
+  listaProductosInflados[posicion3].producto = nombreProducto.value
+  listaProductosInflados[posicion3].cantidad = cantidadForm.value
+  listaProductosInflados[posicion3].descripcion = descripcionProducto.value
+  listaProductosInflados[posicion3].url = urlForm.value
+  // actualizar LS
+  localStorage.setItem("listaProductosInflados",JSON.stringify(listaProductosInflados))
+  // volver a dibuajar tabla
+  borrarTablaInflados()
+  listaProductosInflados.forEach((itemProducto)=>{crearFilaProductosInflado(itemProducto)})
+  limpiarFormulario()
+    break;
+    case 'especias':
+      let posicion4 = listaProductosEspecias.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
+  console.log(posicion)
+  // modificar los datos de esa posision
+  listaProductosEspecias[posicion4].producto = nombreProducto.value
+  listaProductosEspecias[posicion4].cantidad = cantidadForm.value
+  listaProductosEspecias[posicion4].descripcion = descripcionProducto.value
+  listaProductosEspecias[posicion4].url = urlForm.value
+  // actualizar LS
+  localStorage.setItem("listaProductosEspecias",JSON.stringify(listaProductosEspecias))
+  // volver a dibuajar tabla
+  borrarTablaEspecias()
+  listaProductosEspecias.forEach((itemProducto)=>{crearFilaProductosMix(itemProducto)})
+  limpiarFormulario()
+    break;
+  }
+  
+}
+
+function borrarTablaMix(){
+  let tabla = document.querySelector("#tablaMix");
+  tabla.innerHTML = ""
+}
+function borrarTablaFrutas(){
+  let tabla = document.querySelector("#tablaFrutas");
+  tabla.innerHTML = ""
+}
+function borrarTablaInflados(){
+  let tabla = document.querySelector("#tablaInflados");
+  tabla.innerHTML = ""
+}
+function borrarTablaEspecias(){
+  let tabla = document.querySelector("#tablaEspecias");
+  tabla.innerHTML = ""
 }
