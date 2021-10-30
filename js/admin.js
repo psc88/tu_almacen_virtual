@@ -108,7 +108,7 @@ function crearFilaProductosMix(itemProducto) {
     <td>${itemProducto.url}</td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
+      <button class="btn btn-warning mt-2" onclick="eliminarProductoMix('${itemProducto.codigo}')">Borrar</button>
     </td>
   </tr>`;
 }
@@ -123,7 +123,7 @@ function crearFilaProductosFrutas(itemProducto) {
     <td>${itemProducto.url}</td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
+      <button class="btn btn-warning mt-2" onclick="eliminarProductoFrutas('${itemProducto.codigo}')">Borrar</button>
     </td>
   </tr>`;
 }
@@ -139,7 +139,7 @@ function crearFilaProductosInflado(itemProducto) {
     <td>${itemProducto.url}</td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
+      <button class="btn btn-warning mt-2" onclick="eliminarProductoInflado('${itemProducto.codigo}')">Borrar</button>
     </td>
   </tr>`;
 }
@@ -153,7 +153,7 @@ function crearFilaProductosEspecias(itemProducto) {
     <td>${itemProducto.url}</td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Editar</button>
-      <button class="btn btn-warning mt-2" onclick="prepararEdicion()">Borrar</button>
+      <button class="btn btn-warning mt-2" onclick="eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
     </td>
   </tr>`;
 }
@@ -182,3 +182,25 @@ function cargaInicialTabla() {
     crearFilaProductosEspecias(itemProducto);
   });
 }
+
+
+// LOGICA DELETE
+
+window.eliminarProductoMix = (codigo) => {
+  let productosFiltradoMix = listaProductosMix.filter((itemProductoMix)=>{ return itemProductoMix.codigo != codigo});
+  console.log(productosFiltradoMix);
+  }
+window.eliminarProductoFrutas = (codigo) => {
+  let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas)=>{ return itemProductoFrutas.codigo != codigo});
+  console.log(productosFiltradoFrutas);
+  }
+window.eliminarProductoInflado = (codigo) => {
+  let productosFiltradoInflado = listaProductosInflado.filter((itemProductoInflado)=>{ return itemProductoInflado.codigo != codigo});
+  console.log(productosFiltradoInflado);
+  }
+window.eliminarProductoEspecias = (codigo) => {
+  let productosFiltradoEspecias = listaProductosEspecias.filter((itemProductoEspecias)=>{ return itemProductoEspecias.codigo != codigo});
+  console.log(productosFiltradoEspecias);
+  }
+
+  // listaProductos = productosFiltradoMix;
