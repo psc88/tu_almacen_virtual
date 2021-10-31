@@ -26,6 +26,15 @@
   background-image: url("../img/juegoAhorcado.png");
 }
 
+
+/* Pagina Favoritos*/
+.panelUsuario {
+  width: 40%;
+
+}
+
+
+
 /* Estilo navbar */
 .bgIndex {
   background: rgb(108, 55, 237);

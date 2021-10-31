@@ -69,28 +69,83 @@
         </div>
       </nav>
     </header>
-    <main class="">
-      <section class="bg-light">
-        <h2 class="m-5">Tus Favoritos</h2>
-        <section class="container m-5 flex-row">
-          
-          <article class="row border-bottom p-3">
-            <div class="col-sm-6 col-md-2 ">
-                <div class="img-fluid d-flex justify-content-center">
-                    <img
-                src="/img/producto A.png"
-                class="card-img-top w-50 "
-                alt="..."
-              />
-                </div>
-              
+    <main>
+      <section class="row">
+        <div class="accordion ms-auto panelUsuario col-sm-12 col-md-6 col-lg-3" id="datosUsuario">
+          <div class="accordion-item bgSeccionProductos">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button bgSeccionProductos "
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                Hola<strong class="ps-1"> Carlos Carral</strong>
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show bgSeccionProductos"
+              aria-labelledby="headingOne"
+              data-bs-parent="#datosUsuario"
+            >
+              <div class="accordion-body">
+                <a class="text-decoration-none" href="">Cerrar sesión <strong><i class="fas fa-sign-out-alt"></i></strong></a>
+              </div>
             </div>
-            <div class="col-sm-6 col-md-4">
+          </div>
+        </div>
+
+
+
+      </section>
+      
+
+      <section class="container bg-light mb-5">
+        <div class="my-2"><h2 class="pt-3 ps-4">Tus Favoritos</h2></div>
+
+        <section class="my-1 flex-row">
+          <article class="row border-bottom p-2">
+            <div class="col-sm-3 col-md-3">
+              <div class="img-fluid d-flex justify-content-center">
+                <img
+                  src="/img/producto A.png"
+                  class="card-img-top w-50"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
               <div class="w-100">
                 <h5 class="card-title">Manteca de mani</h5>
                 <p class="card-text">
-                  <span class="badge bg-success">Articulo:</span>1004<br />
-                  <span class="fw-bold"> Descripción: </span> Manteca de Mani Marca King 250 grms
+                  <span class="badge bg-success me-2">Articulo:</span>1004<br />
+                  <span class="fw-bold"> Descripción: </span> Manteca de Mani
+                  Marca King 250 grms
+                </p>
+                <button class="btn text-primary">Eliminar</button>
+              </div>
+            </div>
+          </article>
+          <article class="row border-bottom p-2">
+            <div class="col-sm-3 col-md-3">
+              <div class="img-fluid d-flex justify-content-center">
+                <img
+                  src="/img/producto A.png"
+                  class="card-img-top w-50"
+                  alt="..."
+                />
+              </div>
+            </div>
+            <div class="col-sm-4 col-md-4">
+              <div class="w-100">
+                <h5 class="card-title">Manteca de mani</h5>
+                <p class="card-text">
+                  <span class="badge bg-success me-2">Articulo:</span>1004<br />
+                  <span class="fw-bold"> Descripción: </span> Manteca de Mani
+                  Marca King 250 grms
                 </p>
                 <button class="btn text-primary">Eliminar</button>
               </div>
