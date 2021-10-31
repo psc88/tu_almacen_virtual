@@ -1,5 +1,5 @@
 export function validarCampo(input) {
-  if (input.value.trim().length > 0) {
+  if (input.value.trim() != "") {
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -9,7 +9,7 @@ export function validarCampo(input) {
 }
 
 export function validarCodigoProducto(input) {
-  if (input.value.trim() != "" && input.value.trim().length >= 3) {
+if (input.value.trim() != "" && input.value.trim().length >= 3) {
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -78,3 +78,4 @@ let nombreProducto = document.querySelector("#nombreProducto");
 let descripcionProducto = document.querySelector("#descripcionProducto");
 let urlForm = document.querySelector("#urlProducto");
 let categoria = document.querySelector("#cagetoriaProducto")
+
