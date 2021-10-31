@@ -147,10 +147,10 @@ function crearFilaProductosEspecias(itemProducto){
 
 //** Funcion para cargar los datos en la tabla del localstorage **//
 function cargaInicialTabla(){
-  listaProductosMix = JSON.parse(localStorage.getItem("listaProductoMix")) || [];
-  listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductoFrutas")) || [];
-  listaProductosInflados = JSON.parse(localStorage.getItem("listaProductoInflados")) || [];
-  listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductoEspecias")) || [];
+  listaProductosMix = JSON.parse(localStorage.getItem("listaProductosMix")) || [];
+  listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductosFrutas")) || [];
+  listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
+  listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
 
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
