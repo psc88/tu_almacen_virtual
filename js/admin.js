@@ -20,6 +20,7 @@ let listaProductosMix = [];
 let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
+let listaUsuarios = [];
 let productoExistente = false;
 let botonMix = document.querySelector("#mix")
 
@@ -177,9 +178,20 @@ function crearFilaProductosEspecias(itemProducto) {
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
-
     </td>
   </tr>`;
+}
+function crearFilaUsuarios(itemUsuario) {
+  let tabla = document.querySelector("#tablaUsuario")
+  tabla.innerHTML += `<tr>
+  <th scope="row">${itemUsuario.nombre} + ${itemUsuario.apellido}</th>
+  <td>${itemUsuario.correo}</td>
+  <td>${itemUsuario.contraseña}</td>
+  <td class="text-center">
+    <button class="btn btn-warning mt-2>Editar</button>
+    <button class="btn btn-warning mt-2>Borrar</button>
+  </td>
+</tr>`
 }
 
 //** Funcion para cargar los datos en la tabla del localstorage **//
@@ -189,6 +201,7 @@ function cargaInicialTabla(){
   listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductoFrutas")) || [];
   listaProductosInflados = JSON.parse(localStorage.getItem("listaProductoInflados")) || [];
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductoEspecias")) || [];
+  listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
 
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
@@ -201,6 +214,9 @@ function cargaInicialTabla(){
   });
   listaProductosEspecias.forEach((itemProducto) => {
     crearFilaProductosEspecias(itemProducto);
+  });
+  listaUsuarios.forEach((itemUsuario) => {
+    crearFilaUsuarios(itemUsuario);
   });
 }
 

@@ -30,6 +30,7 @@ apellido.addEventListener("blur", () => {
 });
 formularioIngresar.addEventListener("submit", validarUsuario);
 
+
 function validarUsuario(e) {
     e.preventDefault();
     if (validarGeneralCrearUsuario()) {
@@ -44,8 +45,9 @@ function validarUsuario(e) {
 function crearUsuario() {
     let usuarioNuevo = new Usuario(nombre.value, apellido.value, email.value, pass.value);
     usuarios.push(usuarioNuevo);
-    localStorage.setItem("usuarios", JSON.stringify(usuarioNuevo));
+    localStorage.setItem("listaUsuarios", JSON.stringify(usuarioNuevo));
     limpiarFormulario();
+    window.location.replace("../index.html");
 }
 
 function limpiarFormulario() {
