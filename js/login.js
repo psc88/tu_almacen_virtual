@@ -23,13 +23,11 @@ function validarUsuario(e) {
   e.preventDefault();
   if (validarGeneralLogin()) {
     if (productoExistente === false) {
-      agregarUsuario();
+      console.log('aqui ingresara al index.html');
     } else {
       console.log("no se hace nada");
     }
   }
 }
 
-function agregarUsuario(){
 
-}

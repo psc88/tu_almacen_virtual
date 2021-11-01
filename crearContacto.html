@@ -72,8 +72,7 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section>
+    <main class="container">
         <article class="d-flex justify-content-center">
           <article
             class="row align-items-center text text-center w-75 text-white mt-5"
@@ -84,7 +83,7 @@
           </article>
         </article>
         <article class="d-flex justify-content-center">
-          <form class="p-4 w-75" id="formularioProducto">
+          <form class="p-4 w-75" id="formularioCrear">
             <div class="row">
               <div class="mb-3 col-lg-6">
                 <label for="nombreId" class="form-label">Nombre</label>
@@ -94,7 +93,7 @@
                   class="form-control"
                   placeholder="Ingrese nombre"
                 />
-                <div class="invalid-feedback">Este campo es obligatorio</div>
+                <div class="invalid-feedback">Este campo es obligatorio, Solo letras</div>
               </div>
               <div class="mb-3 col-lg-6">
                 <label for="apellidoId" class="form-label">Apellido</label>
@@ -104,7 +103,7 @@
                   class="form-control"
                   placeholder="Ingrese apellido"
                 />
-                <div class="invalid-feedback">Este campo es obligatorio</div>
+                <div class="invalid-feedback">Este campo es obligatorio, Solo letras</div>
               </div>
             </div>
             <div class="mb-3">
@@ -130,20 +129,18 @@
                 Este campo es obligatorio.
               </div>
             </div>
-            <article class="d-flex justify-content-center pt-3">
-                <a href="./index.html" class="btn btn-primary fs-5" type="submit">Confirmar</a>
+                <button class="btn btn-primary fs-5" type="submit">Confirmar</button>
                 <div
                   class="alert alert-danger mt-4 d-none"
                   role="alert"
-                  id="mensajeAlerta"
+                  id="mensajeAlertaCrearUsuario"
                 >
                   Revise la informacion, debe completar todos los datos
                 </div>
-            </article>
           </form>
         </article>
-      </section>
     </main>
     <script src="/js/bootstrap.min.js"></script>
+    <script type="module" src="./js/crearUsuario.js"></script>
   </body>
 </html>

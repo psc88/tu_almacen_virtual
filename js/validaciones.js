@@ -65,14 +65,47 @@ export function validarPass(input){
   }
 }
 
+export function validarPassCrear(input){
+  let patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  if (patron.test(input.value)) {
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    input.className = "form-control is-invalid";
+    return false;
+  }
+}
+
 export function validarMail(input){
   let patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  let valor = document.querySelector("#emailAgre")
   if(patron.test(input.value)){
     input.className = "form-control w-50 is-valid";
     return true;
   } else {
     input.className = "form-control w-50 is-invalid";
+    return false;
+  }
+}
+
+export function validarMailCrear(input){
+  let patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  if(patron.test(input.value)){
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    input.className = "form-control is-invalid";
+    return false;
+  }
+}
+
+export function validarNombre(input){
+  let patron = /^[a-z]{1,20}$/;
+  let patron1 = /^[A-Z]{1,20}$/;
+  if(patron.test(input.value) || patron1.test(input.value)){
+    input.className = "form-control is-valid";
+    return true;
+  } else {
+    input.className = "form-control is-invalid";
     return false;
   }
 }
@@ -98,8 +131,24 @@ export function validarGeneralForm() {
 export function validarGeneralLogin(){
   let alerta = document.querySelector("#mensajeAlertaLogin");
   if (
-    validarMail(email) &&
-    validarPass(pass)
+    validarMail(emailUsuario) &&
+    validarPass(passUsuario)
+  ) {
+    alerta.className = "alert alert-danger mt-4 d-none";
+    return true;
+  } else {
+    alerta.className = "alert alert-danger mt-4";
+    return false;
+  }
+}
+
+export function validarGeneralCrearUsuario(){
+  let alerta = document.querySelector("#mensajeAlertaCrearUsuario");
+  if (
+    validarMailCrear(email) &&
+    validarPassCrear(pass) &&
+    validarNombre(nombre) &&
+    validarNombre(apellido)
   ) {
     alerta.className = "alert alert-danger mt-4 d-none";
     return true;
@@ -115,6 +164,9 @@ let nombreProducto = document.querySelector("#nombreProducto");
 let descripcionProducto = document.querySelector("#descripcionProducto");
 let urlForm = document.querySelector("#urlProducto");
 let categoria = document.querySelector("#cagetoriaProducto")
-let email = document.querySelector("#inputEmail");
-let pass = document.querySelector("#inputPassword");
-
+let emailUsuario = document.querySelector("#inputEmail");
+let passUsuario = document.querySelector("#inputPassword");
+let email = document.querySelector("#correoId");
+let pass = document.querySelector("#passId");
+let nombre = document.querySelector("#nombreId");
+let apellido = document.querySelector("#apellidoId");
