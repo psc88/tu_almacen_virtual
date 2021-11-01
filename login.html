@@ -79,10 +79,10 @@
           <i class="fas fa-user my-4 col fs-2 w-50"><p>Iniciar Sesion</p></i>
           <hr class="col w-25 me-5" />
         </article>
-        <form>
+        <form id="formularioLogin">
           <div class="mb-3 d-flex justify-content-center mt-3">
             <input
-              type="email"
+              type="text"
               class="form-control w-50"
               id="inputEmail"
               aria-describedby="emailHelp"
@@ -91,13 +91,13 @@
           </div>
           <div class="mb-3 d-flex justify-content-center mt-5">
             <input
-              type="password"
+              type="text"
               class="form-control w-50"
-              id="exampleInputPassword1"
+              id="inputPassword"
               placeholder="Contraseña"
             />
           </div>
-          <a href="#" class="btn btn-primary fs-5 mt-4">Ingresar</a>
+          <button class="btn btn-primary" type="submit">Ingresar</button>
           <p class="mt-4 text-light">
             No tienes cuenta?<a href="./crearContacto.html" class="fs-5 text-decoration-none ps-2">Crear cuenta</a>
           </p>
@@ -105,5 +105,6 @@
       </section>
     </main>
     <script src="/js/bootstrap.min.js"></script>
+    <script src="./js/login.js"></script>
   </body>
 </html>
