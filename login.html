@@ -80,31 +80,48 @@
           <hr class="col w-25 me-5" />
         </article>
         <form id="formularioLogin">
-          <div class="mb-3 d-flex justify-content-center mt-3">
+          <div
+            class="mb-3 d-flex justify-content-center row mt-3"
+            id="emailAgre"
+          >
             <input
               type="text"
-              class="form-control w-50"
+              class="form-control w-50 col-12"
               id="inputEmail"
               aria-describedby="emailHelp"
               placeholder="Email"
             />
+            <div class="invalid-feedback text-light col-12">Este campo es obligatorio, usuario@gmail.com</div>
           </div>
-          <div class="mb-3 d-flex justify-content-center mt-5">
+
+          <div class="mb-3 d-flex justify-content-center mt-5 row">
             <input
               type="text"
-              class="form-control w-50"
+              class="form-control w-50 col-12"
               id="inputPassword"
               placeholder="Contraseña"
             />
+            <div class="invalid-feedback text-light col-12">Este campo es obligatorio, tiene que tener una (mayuscula, expresión, número)</div>
           </div>
           <button class="btn btn-primary" type="submit">Ingresar</button>
+          <div
+            class="alert alert-danger mt-4 d-none"
+            role="alert"
+            id="mensajeAlertaLogin"
+          >
+            Revise la informacion, debe completar todos los datos
+          </div>
           <p class="mt-4 text-light">
-            No tienes cuenta?<a href="./crearContacto.html" class="fs-5 text-decoration-none ps-2">Crear cuenta</a>
+            No tienes cuenta?<a
+              href="./crearContacto.html"
+              class="fs-5 text-decoration-none ps-2"
+              >Crear cuenta</a
+            >
           </p>
         </form>
       </section>
     </main>
     <script src="/js/bootstrap.min.js"></script>
-    <script src="./js/login.js"></script>
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

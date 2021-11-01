@@ -54,6 +54,29 @@ export function validarCategoria(input){
   }
 }
 
+export function validarPass(input){
+  let patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
+  if (patron.test(input.value)) {
+    input.className = "form-control w-50 is-valid";
+    return true;
+  } else {
+    input.className = "form-control w-50 is-invalid";
+    return false;
+  }
+}
+
+export function validarMail(input){
+  let patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+  let valor = document.querySelector("#emailAgre")
+  if(patron.test(input.value)){
+    input.className = "form-control w-50 is-valid";
+    return true;
+  } else {
+    input.className = "form-control w-50 is-invalid";
+    return false;
+  }
+}
+
 export function validarGeneralForm() {
   let alerta = document.querySelector("#mensajeAlerta");
   if (
@@ -72,10 +95,26 @@ export function validarGeneralForm() {
   }
 }
 
+export function validarGeneralLogin(){
+  let alerta = document.querySelector("#mensajeAlertaLogin");
+  if (
+    validarMail(email) &&
+    validarPass(pass)
+  ) {
+    alerta.className = "alert alert-danger mt-4 d-none";
+    return true;
+  } else {
+    alerta.className = "alert alert-danger mt-4";
+    return false;
+  }
+}
+
 let codigoForm = document.querySelector("#codigoId");
 let cantidadForm = document.querySelector("#cantidadProducto");
 let nombreProducto = document.querySelector("#nombreProducto");
 let descripcionProducto = document.querySelector("#descripcionProducto");
 let urlForm = document.querySelector("#urlProducto");
 let categoria = document.querySelector("#cagetoriaProducto")
+let email = document.querySelector("#inputEmail");
+let pass = document.querySelector("#inputPassword");
 
