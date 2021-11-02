@@ -235,7 +235,7 @@ function cargaInicialTabla(){
   listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
   listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
-
+  console.log(listaUsuarios);
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
   });
