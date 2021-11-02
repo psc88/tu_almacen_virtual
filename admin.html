@@ -78,6 +78,20 @@
           <h2 class="text-center pt-3">Producto Varios</h2>
           <form class="p-5" id="formularioProducto">
             <div class="mb-3">
+              <label for="cagetoriaProducto" class="form-label"
+                >Categoria</label
+              >
+              <input
+                id="cagetoriaProducto"
+                type="text"
+                class="form-control"
+                placeholder="mix, frutas, inflados, especias "
+              />
+              <div class="invalid-feedback">
+                Eliga mix, frutas, inflados o especias
+              </div>
+            </div>
+            <div class="mb-3">
               <label for="codigoId" class="form-label">Codigo</label>
               <input
                 id="codigoId"
@@ -122,27 +136,15 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="urlProducto" class="form-label" id="inputDisable">URL</label>
+              <label for="urlProducto" class="form-label" id="inputDisable"
+                >URL</label
+              >
               <input
                 type="text"
                 class="form-control"
                 id="urlProducto"
                 placeholder="https://"
               />
-            </div>
-            <div class="mb-3">
-              <label for="cagetoriaProducto" class="form-label"
-                >Categoria</label
-              >
-              <input
-                id="cagetoriaProducto"
-                type="text"
-                class="form-control"
-                placeholder="mix, frutas, inflados, especias "
-              />
-              <div class="invalid-feedback">
-                Eliga mix, frutas, inflados o especias
-              </div>
             </div>
             <button class="btn btn-primary" type="submit">Guardar</button>
             <div
@@ -169,8 +171,7 @@
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaMix">
-            </tbody>
+            <tbody id="tablaMix"></tbody>
           </table>
         </article>
         <article class="table-responsive">
@@ -186,8 +187,7 @@
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaFrutas">
-            </tbody>
+            <tbody id="tablaFrutas"></tbody>
           </table>
         </article>
         <article class="table-responsive">
@@ -203,8 +203,7 @@
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaInflados">
-            </tbody>
+            <tbody id="tablaInflados"></tbody>
           </table>
         </article>
         <article class="table-responsive">
@@ -216,15 +215,13 @@
                 <th scope="col">Producto</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Cantidad</th>
-                <th scope="col">URL</th>
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaEspecias">
-            </tbody>
+            <tbody id="tablaEspecias"></tbody>
           </table>
         </article>
-        <hr>
+        <hr />
         <article class="table-responsive">
           <table class="table table-dark table-striped">
             <h1>Usuarios</h1>
@@ -236,8 +233,7 @@
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaUsuario">
-            </tbody>
+            <tbody id="tablaUsuario"></tbody>
           </table>
         </article>
         <article class="table-responsive">
@@ -251,8 +247,7 @@
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
-            <tbody id="tablaEmpleado">
-            </tbody>
+            <tbody id="tablaEmpleado"></tbody>
           </table>
         </article>
       </section>

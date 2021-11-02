@@ -46,6 +46,11 @@ export function validarCategoria(input){
   let patron2 = /^[i][n][f][l][a][d][o][s]$/;
   let patron3 = /^[e][s][p][e][c][i][a][s]$/;
   if (input.value.trim().length > 0 && patron.test(input.value.trim()) || patron1.test(input.value.trim()) || patron2.test(input.value.trim()) || patron3.test(input.value.trim())){
+    if(categoria.value === "especias"){
+      urlForm.setAttribute("disabled", "")
+    } else {
+      urlForm.removeAttribute("disabled")
+    }
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -112,19 +117,35 @@ export function validarNombre(input){
 
 export function validarGeneralForm() {
   let alerta = document.querySelector("#mensajeAlerta");
-  if (
-    validarCodigoProducto(codigoForm) &&
-    validarCampo(nombreProducto) &&
-    validarCampo(descripcionProducto) &&
-    validarCantidadProductos(cantidadForm) &&
-    validarURL(urlForm) &&
-    validarCategoria(categoria)
-  ) {
-    alerta.className = "alert alert-danger mt-4 d-none";
-    return true;
+  if(categoria.value === "especias"){
+    if (
+      validarCodigoProducto(codigoForm) &&
+      validarCampo(nombreProducto) &&
+      validarCampo(descripcionProducto) &&
+      validarCantidadProductos(cantidadForm) &&
+      validarCategoria(categoria)
+    ) {
+      alerta.className = "alert alert-danger mt-4 d-none";
+      return true;
+    } else {
+      alerta.className = "alert alert-danger mt-4";
+      return false;
+    }
   } else {
-    alerta.className = "alert alert-danger mt-4";
-    return false;
+    if (
+      validarCodigoProducto(codigoForm) &&
+      validarCampo(nombreProducto) &&
+      validarCampo(descripcionProducto) &&
+      validarCantidadProductos(cantidadForm) &&
+      validarURL(urlForm) &&
+      validarCategoria(categoria)
+    ) {
+      alerta.className = "alert alert-danger mt-4 d-none";
+      return true;
+    } else {
+      alerta.className = "alert alert-danger mt-4";
+      return false;
+    }
   }
 }
 

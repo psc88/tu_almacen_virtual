@@ -62,7 +62,10 @@ cantidadForm.addEventListener("blur", () => {
 urlForm.addEventListener("blur", () => {
   validarURL(urlForm);
 });
-categoria.addEventListener("blur", () => validarCategoria(categoria));
+categoria.addEventListener("blur", () => {
+  validarCategoria(categoria)
+});
+
 formulario.addEventListener("submit", guardarProducto);
 
 //** guardar producto en localstorage y crear tabla **//
@@ -164,9 +167,8 @@ function crearFilaProductosFrutas(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
-
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="eliminarProductoFrutas('${itemProducto.codigo}')">Borrar</button>
   </td>
@@ -180,7 +182,7 @@ function crearFilaProductosInflado(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" id="inf" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="eliminarProductoInflado('${itemProducto.codigo}')">Borrar</button>
@@ -194,7 +196,6 @@ function crearFilaProductosEspecias(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
@@ -388,7 +389,6 @@ function actualizarProductos(categoria){
   switch(categoria){
     case 'mix':
       let posicion = listaProductosMix.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  console.log(posicion)
   // modificar los datos de esa posision
   listaProductosMix[posicion].producto = nombreProducto.value
   listaProductosMix[posicion].cantidad = cantidadForm.value
@@ -403,7 +403,6 @@ function actualizarProductos(categoria){
     break;
     case 'frutas':
       let posicion2 = listaProductosFrutas.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  console.log(posicion)
   // modificar los datos de esa posision
   listaProductosFrutas[posicion2].producto = nombreProducto.value
   listaProductoFrutas[posicion2].cantidad = cantidadForm.value
@@ -433,7 +432,6 @@ function actualizarProductos(categoria){
     break;
     case 'especias':
       let posicion4 = listaProductosEspecias.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  console.log(posicion)
   // modificar los datos de esa posision
   listaProductosEspecias[posicion4].producto = nombreProducto.value
   listaProductosEspecias[posicion4].cantidad = cantidadForm.value
