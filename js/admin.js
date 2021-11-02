@@ -21,6 +21,26 @@ let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let listaUsuarios = [];
+let listaEmpleados = [
+{
+  "nombre": "Pablo",
+  "apellido": "castillo",
+  "correo": "pcastillo@hotmail.com",
+  "contraseña": "1234"
+},
+{
+  "nombre": "Carlos",
+  "apellido": "Carral",
+  "correo": "ccarral@hotmail.com",
+  "contraseña": "1234"
+},
+{
+  "nombre": "Enrico",
+  "apellido": "Palermo",
+  "correo": "epalermo@hotmail.com",
+  "contraseña": "1234"
+}
+];
 let productoExistente = false;
 let botonMix = document.querySelector("#mix")
 
@@ -193,6 +213,18 @@ function crearFilaUsuarios(itemUsuario) {
   </td>
 </tr>`
 }
+function crearFilasEmpleado(itemEmpleado) {
+  let tabla = document.querySelector("#tablaEmpleado")
+  tabla.innerHTML += `<tr>
+  <th scope="row">${itemEmpleado.nombre} ${itemEmpleado.apellido}</th>
+  <td>${itemEmpleado.correo}</td>
+  <td>${itemEmpleado.contraseña}</td>
+  <td class="text-center">
+    <button class="btn btn-warning mt-2>Editar</button>
+    <button class="btn btn-warning mt-2>Borrar</button>
+  </td>
+</tr>`
+}
 
 //** Funcion para cargar los datos en la tabla del localstorage **//
 
@@ -217,6 +249,9 @@ function cargaInicialTabla(){
   });
   listaUsuarios.forEach((itemUsuario) => {
     crearFilaUsuarios(itemUsuario);
+  });
+  listaEmpleados.forEach((itemEmpleado) => {
+    crearFilasEmpleado(itemEmpleado)
   });
 }
 
