@@ -21,7 +21,6 @@ let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let productoExistente = false;
-let botonMix = document.querySelector("#mix")
 
 //** llamado de la funcion para carga inicial de la tabla **//
 cargaInicialTabla();
@@ -51,7 +50,6 @@ function guardarProducto(e) {
     if(productoExistente === false){
     agregarProducto(); 
   }else{
-    console.log("aca estamos")
     actualizarProductos(categoria.value)
   }
 }
@@ -71,7 +69,7 @@ function agregarProducto() {
     case "mix":
       listaProductosMix.push(productoNuevo);
       localStorage.setItem(
-        "listaProductoMix",
+        "listaProductosMix",
         JSON.stringify(listaProductosMix)
       );
       limpiarFormulario();
@@ -81,7 +79,7 @@ function agregarProducto() {
     case "frutas":
       listaProductosFrutas.push(productoNuevo);
       localStorage.setItem(
-        "listaProductoFrutas",
+        "listaProductosFrutas",
         JSON.stringify(listaProductosFrutas)
       );
       limpiarFormulario();
@@ -90,7 +88,7 @@ function agregarProducto() {
     case "inflados":
       listaProductosInflados.push(productoNuevo);
       localStorage.setItem(
-        "listaProductoInflados",
+        "listaProductosInflados",
         JSON.stringify(listaProductosInflados)
       );
       limpiarFormulario();
@@ -99,7 +97,7 @@ function agregarProducto() {
     case "especias":
       listaProductosEspecias.push(productoNuevo);
       localStorage.setItem(
-        "listaProductoEspecias",
+        "listaProductosEspecias",
         JSON.stringify(listaProductosEspecias)
       );
       limpiarFormulario();
@@ -144,7 +142,7 @@ function crearFilaProductosFrutas(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
 
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
@@ -160,7 +158,7 @@ function crearFilaProductosInflado(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" id="inf" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="eliminarProductoInflado('${itemProducto.codigo}')">Borrar</button>
@@ -174,7 +172,7 @@ function crearFilaProductosEspecias(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td>${itemProducto.url}</td>
+    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
