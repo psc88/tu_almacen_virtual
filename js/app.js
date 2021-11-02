@@ -1,35 +1,35 @@
 //** array de los productos */
-let listaProductoMix = [];
-let listaProductoFrutas = [];
-let listaProductoInflados = [];
-let listaProductoEspecias = [];
+let listaProductosMix = [];
+let listaProductosFrutas = [];
+let listaProductosInflados = [];
+let listaProductosEspecias = [];
 
 //** Carga inicial de los productos a la web */
 cargaInicial();
 
 //** Traemos los datos del localStorage y lo recorremos */
 function cargaInicial(){
-    listaProductoMix = JSON.parse(localStorage.getItem("listaProductoMix")) || [];
-    listaProductoFrutas = JSON.parse(localStorage.getItem("listaProductoFrutas")) || [];
-    listaProductoInflados = JSON.parse(localStorage.getItem("listaProductoInflados")) || [];
-    listaProductoEspecias = JSON.parse(localStorage.getItem("listaProductoEspecias")) || [];
-    if(listaProductoMix.length > 0){
-        listaProductoMix.forEach(itemProducto => {
+    listaProductosMix = JSON.parse(localStorage.getItem("listaProductosMix")) || [];
+    listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductosFrutas")) || [];
+    listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
+    listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
+    if(listaProductosMix.length > 0){
+        listaProductosMix.forEach(itemProducto => {
             crearColumnaMix(itemProducto);       
         });
     }
-    if(listaProductoFrutas.length > 0){
-        listaProductoFrutas.forEach(itemProducto => {
+    if(listaProductosFrutas.length > 0){
+        listaProductosFrutas.forEach(itemProducto => {
             crearColumnaFrutas(itemProducto);       
         });
     }
-    if(listaProductoInflados.length > 0){
-        listaProductoInflados.forEach(itemProducto => {
+    if(listaProductosInflados.length > 0){
+        listaProductosInflados.forEach(itemProducto => {
             crearColumnaInflados(itemProducto);       
         });
     }
-    if(listaProductoEspecias.length > 0){
-        listaProductoEspecias.forEach(itemProducto => {
+    if(listaProductosEspecias.length > 0){
+        listaProductosEspecias.forEach(itemProducto => {
             crearColumnaEspecias(itemProducto);       
         });
     }
