@@ -85,7 +85,7 @@
             id="emailAgre"
           >
             <input
-              type="text"
+              type="email"
               class="form-control w-50 col-12"
               id="inputEmail"
               aria-describedby="emailHelp"
@@ -96,7 +96,7 @@
 
           <div class="mb-3 d-flex justify-content-center mt-5 row">
             <input
-              type="text"
+              type="password"
               class="form-control w-50 col-12"
               id="inputPassword"
               placeholder="Contraseña"
@@ -110,6 +110,13 @@
             id="mensajeAlertaLogin"
           >
             Revise la informacion, debe completar todos los datos
+          </div>
+          <div
+            class="alert alert-danger mt-4 d-none"
+            role="alert"
+            id="mensajeAlertaErrorLogin"
+          >
+            Error!! Email o Contraseña incorrecta.
           </div>
           <p class="mt-4 text-light">
             No tienes cuenta?<a

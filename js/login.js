@@ -14,19 +14,19 @@ let listaEmpleados = [
       "nombre": "Pablo",
       "apellido": "castillo",
       "correo": "pcastillo@hotmail.com",
-      "contraseña": "Lautaro13!"
+      "contraseña": "Pablo123!"
     },
     {
       "nombre": "Carlos",
       "apellido": "Carral",
       "correo": "ccarral@hotmail.com",
-      "contraseña": "1234"
+      "contraseña": "Carral123!"
     },
     {
       "nombre": "Enrico",
       "apellido": "Palermo",
       "correo": "epalermo@hotmail.com",
-      "contraseña": "1234"
+      "contraseña": "Epalermo132!"
     }
 ];
 
@@ -52,11 +52,16 @@ function comprobarDatos() {
     let nuevaLista = listaEmpleados.concat(JSON.parse(localStorage.getItem("listaUsuarios")) || [])
  
     for (let i = 0; i < nuevaLista.length; i++) {
-        if(email.value === nuevaLista[i].correo && pass.value === nuevaLista[i].contraseña){
+        if(email.value === "pcastillo@hotmail.com" && pass.value === "Pablo13!" ||
+        email.value === "ccarral@hotmail.com" && pass.value === "Carral123!" ||
+        email.value === "epalermo@hotmail.com" && pass.value === "Epalermo132!"){
             window.location.replace("../admin.html");
+        } else if(email.value === nuevaLista[i].correo && pass.value === nuevaLista[i].contraseña) {
+            window.location.replace("../index.html");
         }
     }
-    console.log("Error, mail o password incorrecto")
+    let alerta = document.querySelector("#mensajeAlertaErrorLogin");
+    alerta.className = "alert alert-danger mt-4";
 }
 
 
