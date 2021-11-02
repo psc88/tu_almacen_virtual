@@ -79,31 +79,56 @@
           <i class="fas fa-user my-4 col fs-2 w-50"><p>Iniciar Sesion</p></i>
           <hr class="col w-25 me-5" />
         </article>
-        <form>
-          <div class="mb-3 d-flex justify-content-center mt-3">
+        <form id="formularioLogin">
+          <div
+            class="mb-3 d-flex justify-content-center row mt-3"
+            id="emailAgre"
+          >
             <input
               type="email"
-              class="form-control w-50"
+              class="form-control w-50 col-12"
               id="inputEmail"
               aria-describedby="emailHelp"
               placeholder="Email"
             />
+            <div class="invalid-feedback text-light col-12">Este campo es obligatorio, usuario@gmail.com</div>
           </div>
-          <div class="mb-3 d-flex justify-content-center mt-5">
+
+          <div class="mb-3 d-flex justify-content-center mt-5 row">
             <input
               type="password"
-              class="form-control w-50"
-              id="exampleInputPassword1"
+              class="form-control w-50 col-12"
+              id="inputPassword"
               placeholder="Contraseña"
             />
+            <div class="invalid-feedback text-light col-12">Este campo es obligatorio, tiene que tener una (mayuscula, expresión, número)</div>
           </div>
-          <a href="#" class="btn btn-primary fs-5 mt-4">Ingresar</a>
+          <button class="btn btn-primary" type="submit">Ingresar</button>
+          <div
+            class="alert alert-danger mt-4 d-none"
+            role="alert"
+            id="mensajeAlertaLogin"
+          >
+            Revise la informacion, debe completar todos los datos
+          </div>
+          <div
+            class="alert alert-danger mt-4 d-none"
+            role="alert"
+            id="mensajeAlertaErrorLogin"
+          >
+            Error!! Email o Contraseña incorrecta.
+          </div>
           <p class="mt-4 text-light">
-            No tienes cuenta?<a href="./crearContacto.html" class="fs-5 text-decoration-none ps-2">Crear cuenta</a>
+            No tienes cuenta?<a
+              href="./crearContacto.html"
+              class="fs-5 text-decoration-none ps-2"
+              >Crear cuenta</a
+            >
           </p>
         </form>
       </section>
     </main>
     <script src="/js/bootstrap.min.js"></script>
+    <script type="module" src="./js/login.js"></script>
   </body>
 </html>

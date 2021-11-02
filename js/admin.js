@@ -20,6 +20,27 @@ let listaProductosMix = [];
 let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
+let listaUsuarios = [];
+let listaEmpleados = [
+{
+  "nombre": "Pablo",
+  "apellido": "castillo",
+  "correo": "pcastillo@hotmail.com",
+  "contraseña": "1234"
+},
+{
+  "nombre": "Carlos",
+  "apellido": "Carral",
+  "correo": "ccarral@hotmail.com",
+  "contraseña": "1234"
+},
+{
+  "nombre": "Enrico",
+  "apellido": "Palermo",
+  "correo": "epalermo@hotmail.com",
+  "contraseña": "1234"
+}
+];
 let productoExistente = false;
 
 //** llamado de la funcion para carga inicial de la tabla **//
@@ -176,9 +197,32 @@ function crearFilaProductosEspecias(itemProducto) {
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
-
     </td>
   </tr>`;
+}
+function crearFilaUsuarios(itemUsuario) {
+  let tabla = document.querySelector("#tablaUsuario")
+  tabla.innerHTML += `<tr>
+  <th scope="row">${itemUsuario.nombre} + ${itemUsuario.apellido}</th>
+  <td>${itemUsuario.correo}</td>
+  <td>${itemUsuario.contraseña}</td>
+  <td class="text-center">
+    <button class="btn btn-warning mt-2>Editar</button>
+    <button class="btn btn-warning mt-2>Borrar</button>
+  </td>
+</tr>`
+}
+function crearFilasEmpleado(itemEmpleado) {
+  let tabla = document.querySelector("#tablaEmpleado")
+  tabla.innerHTML += `<tr>
+  <th scope="row">${itemEmpleado.nombre} ${itemEmpleado.apellido}</th>
+  <td>${itemEmpleado.correo}</td>
+  <td>${itemEmpleado.contraseña}</td>
+  <td class="text-center">
+    <button class="btn btn-warning mt-2>Editar</button>
+    <button class="btn btn-warning mt-2>Borrar</button>
+  </td>
+</tr>`
 }
 
 //** Funcion para cargar los datos en la tabla del localstorage **//
@@ -188,6 +232,7 @@ function cargaInicialTabla(){
   listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductosFrutas")) || [];
   listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
+  listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
 
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
@@ -200,6 +245,12 @@ function cargaInicialTabla(){
   });
   listaProductosEspecias.forEach((itemProducto) => {
     crearFilaProductosEspecias(itemProducto);
+  });
+  listaUsuarios.forEach((itemUsuario) => {
+    crearFilaUsuarios(itemUsuario);
+  });
+  listaEmpleados.forEach((itemEmpleado) => {
+    crearFilasEmpleado(itemEmpleado)
   });
 }
 
@@ -227,7 +278,7 @@ window.eliminarProductoMix = (codigo) => {
   let productosFiltradoMix = listaProductosMix.filter((itemProductoMix) => {
     return itemProductoMix.codigo != codigo});
   listaProductosMix = productosFiltradoMix;
-  localStorage.setItem("listaProductoMix", JSON.stringify(listaProductosMix));
+  localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix));
   borrarFilasMix();
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
@@ -238,7 +289,7 @@ window.eliminarProductoFrutas = (codigo) => {
   let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas) => {
       return itemProductoFrutas.codigo != codigo});
   listaProductosFrutas = productosFiltradoFrutas;
-  localStorage.setItem("listaProductoFrutas", JSON.stringify(listaProductosFrutas));
+  localStorage.setItem("listaProductosFrutas", JSON.stringify(listaProductosFrutas));
   borrarFilasfrutas();
   listaProductosFrutas.forEach((itemProducto) => {
     crearFilaProductosFrutas(itemProducto);
@@ -251,7 +302,7 @@ window.eliminarProductoInflado = (codigo) => {
     });
   listaProductosInflados = productosFiltradoInflado;
   localStorage.setItem(
-    "listaProductoInflados",
+    "listaProductosInflados",
     JSON.stringify(listaProductosInflados)
   );
   borrarFilasInflado();
@@ -268,7 +319,7 @@ window.eliminarProductoEspecias = (codigo) => {
   );
   listaProductosEspecias = productosFiltradoEspecias;
   localStorage.setItem(
-    "listaProductoEspecias",
+    "listaProductosEspecias",
     JSON.stringify(listaProductosEspecias)
   );
   borrarFilasEspecias();
