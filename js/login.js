@@ -52,7 +52,7 @@ function comprobarDatos() {
     let nuevaLista = listaEmpleados.concat(JSON.parse(localStorage.getItem("listaUsuarios")) || [])
  
     for (let i = 0; i < nuevaLista.length; i++) {
-        if(email.value === "pcastillo@hotmail.com" && pass.value === "Pablo13!" ||
+        if(email.value === "pcastillo@hotmail.com" && pass.value === "Pablo123!" ||
         email.value === "ccarral@hotmail.com" && pass.value === "Carral123!" ||
         email.value === "epalermo@hotmail.com" && pass.value === "Epalermo132!"){
             window.location.replace("../admin.html");
