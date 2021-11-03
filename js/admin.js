@@ -98,6 +98,11 @@ function agregarProducto() {
       );
       limpiarFormulario();
       crearFilaProductosMix(productoNuevo);
+      Swal.fire(
+        'Bien hecho!',
+        'El producto fue correctamente agregado!',
+        'success'
+      )
 
       break;
     case "frutas":
@@ -108,6 +113,11 @@ function agregarProducto() {
       );
       limpiarFormulario();
       crearFilaProductosFrutas(productoNuevo);
+      Swal.fire(
+        'Bien hecho!',
+        'El producto fue correctamente agregado!',
+        'success'
+      )
       break;
     case "inflados":
       listaProductosInflados.push(productoNuevo);
@@ -117,6 +127,11 @@ function agregarProducto() {
       );
       limpiarFormulario();
       crearFilaProductosInflado(productoNuevo);
+      Swal.fire(
+        'Bien hecho!',
+        'El producto fue correctamente agregado!',
+        'success'
+      )
       break;
     case "especias":
       listaProductosEspecias.push(productoNuevo);
@@ -126,6 +141,11 @@ function agregarProducto() {
       );
       limpiarFormulario();
       crearFilaProductosEspecias(productoNuevo);
+      Swal.fire(
+        'Bien hecho!',
+        'El producto fue correctamente agregado!',
+        'success'
+      )
       break;
   }
 }
@@ -273,20 +293,49 @@ function borrarFilasEspecias(){
 }
 
 //** Funcion para eliminar producto
-
 window.eliminarProductoMix = (codigo) => {
-  let productosFiltradoMix = listaProductosMix.filter((itemProductoMix) => {
-    return itemProductoMix.codigo != codigo});
-  listaProductosMix = productosFiltradoMix;
-  localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix));
-  borrarFilasMix();
-  listaProductosMix.forEach((itemProducto) => {
-    crearFilaProductosMix(itemProducto);
-  });
+Swal.fire({
+  title: '¿Deseas eliminar este producto?',
+  text: "Si eliminas el producto no podras recuperarlo!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Eliminalo',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+     let productosFiltradoMix = listaProductosMix.filter((itemProductoMix) => {
+     return itemProductoMix.codigo != codigo});
+     listaProductosMix = productosFiltradoMix;
+     localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix));
+     borrarFilasMix();
+     listaProductosMix.forEach((itemProducto) => {
+     crearFilaProductosMix(itemProducto);
+      });
+    }
+    Swal.fire(
+      'Eliminado!',
+      'El producto fue correctamente eliminado',
+      'success'
+    )
+  })
 }
 
+
 window.eliminarProductoFrutas = (codigo) => {
-  let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas) => {
+Swal.fire({
+  title: '¿Deseas eliminar este producto?',
+  text: "Si eliminas el producto no podras recuperarlo!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Eliminalo',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas) => {
       return itemProductoFrutas.codigo != codigo});
   listaProductosFrutas = productosFiltradoFrutas;
   localStorage.setItem("listaProductosFrutas", JSON.stringify(listaProductosFrutas));
@@ -295,9 +344,29 @@ window.eliminarProductoFrutas = (codigo) => {
     crearFilaProductosFrutas(itemProducto);
   });
 };
+    
+    Swal.fire(
+      'Eliminado!',
+      'El producto fue correctamente eliminado',
+      'success'
+    )
+  })
+}
+
 
 window.eliminarProductoInflado = (codigo) => {
-  let productosFiltradoInflado = listaProductosInflados.filter((itemProductoInflado) => {
+Swal.fire({
+  title: '¿Deseas eliminar este producto?',
+  text: "Si eliminas el producto no podras recuperarlo!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Eliminalo',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    let productosFiltradoInflado = listaProductosInflados.filter((itemProductoInflado) => {
       return itemProductoInflado.codigo != codigo
     });
   listaProductosInflados = productosFiltradoInflado;
@@ -310,24 +379,53 @@ window.eliminarProductoInflado = (codigo) => {
     crearFilaProductosInflado(itemProducto);
   });
 };
+    
+    Swal.fire(
+      'Eliminado!',
+      'El producto fue correctamente eliminado',
+      'success'
+    )
+  })
+}
+
 
 window.eliminarProductoEspecias = (codigo) => {
-  let productosFiltradoEspecias = listaProductosEspecias.filter(
-    (itemProductoEspecias) => {
-      return itemProductoEspecias.codigo != codigo;
-    }
-  );
-  listaProductosEspecias = productosFiltradoEspecias;
-  localStorage.setItem(
-    "listaProductosEspecias",
-    JSON.stringify(listaProductosEspecias)
-  );
-  borrarFilasEspecias();
-  listaProductosEspecias.forEach((itemProducto) => {
-    crearFilaProductosEspecias(itemProducto);
-  });
+Swal.fire({
+  title: '¿Deseas eliminar este producto?',
+  text: "Si eliminas el producto no podras recuperarlo!",
+  icon: 'warning',
+  showCancelButton: true,
+  confirmButtonColor: '#3085d6',
+  cancelButtonColor: '#d33',
+  confirmButtonText: 'Si, Eliminalo',
+  cancelButtonText: 'Cancelar'
+}).then((result) => {
+  if (result.isConfirmed) {
+    let productosFiltradoEspecias = listaProductosEspecias.filter(
+      (itemProductoEspecias) => {
+        return itemProductoEspecias.codigo != codigo;
+      }
+    );
+    listaProductosEspecias = productosFiltradoEspecias;
+    localStorage.setItem(
+      "listaProductosEspecias",
+      JSON.stringify(listaProductosEspecias)
+    );
+    borrarFilasEspecias();
+    listaProductosEspecias.forEach((itemProducto) => {
+      crearFilaProductosEspecias(itemProducto);
+    });
+  };
 
-}
+    Swal.fire(
+      'Eliminado!',
+      'El producto fue correctamente eliminado',
+      'success'
+      )
+    })
+  }
+
+
 
 // se prepara la edicion por categoria
 
@@ -399,6 +497,11 @@ function actualizarProductos(categoria){
   borrarTablaMix()
   listaProductosMix.forEach((itemProducto)=>{crearFilaProductosMix(itemProducto)})
   limpiarFormulario()
+  Swal.fire(
+    'Producto Modificado!',
+    'El producto fue correctamente modificado!',
+    'success'
+  )
     break;
     case 'frutas':
       let posicion2 = listaProductosFrutas.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
@@ -413,6 +516,11 @@ function actualizarProductos(categoria){
   borrarTablaFrutas()
   listaProductosFrutas.forEach((itemProducto)=>{crearFilaProductosFrutas(itemProducto)})
   limpiarFormulario()
+  Swal.fire(
+    'Producto Modificado!',
+    'El producto fue correctamente modificado!',
+    'success'
+  )
     break;
     case 'inflados':
       let posicion3 = listaProductosInflados.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
@@ -426,8 +534,14 @@ function actualizarProductos(categoria){
   localStorage.setItem("listaProductosInflados",JSON.stringify(listaProductosInflados))
   // volver a dibuajar tabla
   borrarTablaInflados()
-  listaProductosInflados.forEach((itemProducto)=>{crearFilaProductosInflado(itemProducto)})
+  listaProductosInflados.forEach((itemProducto)=>{crearFilaProductosEspecias(itemProducto)})
   limpiarFormulario()
+  
+  Swal.fire(
+    'Producto Modificado!',
+    'El producto fue correctamente modificado!',
+    'success'
+  )
     break;
     case 'especias':
       let posicion4 = listaProductosEspecias.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
@@ -440,8 +554,14 @@ function actualizarProductos(categoria){
   localStorage.setItem("listaProductosEspecias",JSON.stringify(listaProductosEspecias))
   // volver a dibuajar tabla
   borrarTablaEspecias()
-  listaProductosEspecias.forEach((itemProducto)=>{crearFilaProductosMix(itemProducto)})
-  limpiarFormulario()
+  listaProductosEspecias.forEach((itemProducto) => {
+    crearFilaProductosEspecias(itemProducto);
+  });
+  Swal.fire(
+    'Producto Modificado!',
+    'El producto fue correctamente modificado!',
+    'success'
+  )
     break;
   }
   
@@ -472,17 +592,43 @@ function borrarTablaUsuarios(){
 
 /* Fc para eliminar el Usuario  */
 window.eliminarUsuario = (codigo) => {
-  let usuarioFiltrado = listaUsuarios.filter((listaUsuarios ) => {
-  return listaUsuarios.correo != codigo;
-  });
- listaUsuarios = usuarioFiltrado;
-console.log(listaUsuarios);
-localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
-borrarTablaUsuarios()
-listaUsuarios.forEach((itemUsuario) => {
-crearFilaUsuarios(itemUsuario);
- });
-   }
+  Swal.fire({
+    title: '¿Deseas eliminar este Usuario?',
+    text: "Una vez eliminado no podras recuperarlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Eliminalo',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let usuarioFiltrado = listaUsuarios.filter((listaUsuarios ) => {
+        return listaUsuarios.correo != codigo;
+        });
+       listaUsuarios = usuarioFiltrado;
+      console.log(listaUsuarios);
+      localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
+      borrarTablaUsuarios()
+      listaUsuarios.forEach((itemUsuario) => {
+      crearFilaUsuarios(itemUsuario);
+       });
+         }
+  
+      Swal.fire(
+        'Eliminado!',
+        'El usuario fue Eliminado',
+        'success'
+        )
+      })
+    }
+
+
+
+
+
+
+  
 
 /* Boton para limpiar el formulario*/
 btnlimpiarFormulario.addEventListener("click", limpiarFormulario);
