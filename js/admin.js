@@ -22,24 +22,24 @@ let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let listaUsuarios = [];
 let listaEmpleados = [
-{
-  "nombre": "Pablo",
-  "apellido": "castillo",
-  "correo": "pcastillo@hotmail.com",
-  "contraseña": "1234"
-},
-{
-  "nombre": "Carlos",
-  "apellido": "Carral",
-  "correo": "ccarral@hotmail.com",
-  "contraseña": "1234"
-},
-{
-  "nombre": "Enrico",
-  "apellido": "Palermo",
-  "correo": "epalermo@hotmail.com",
-  "contraseña": "1234"
-}
+  {
+    "nombre": "Pablo",
+    "apellido": "castillo",
+    "correo": "pcastillo@hotmail.com",
+    "contraseña": "Pablo123!"
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "Carral",
+    "correo": "ccarral@hotmail.com",
+    "contraseña": "Carral123!"
+  },
+  {
+    "nombre": "Enrico",
+    "apellido": "Palermo",
+    "correo": "epalermo@hotmail.com",
+    "contraseña": "Epalermo132!"
+  }
 ];
 let productoExistente = false;
 

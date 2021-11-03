@@ -13,6 +13,7 @@ let nombre = document.querySelector("#nombreId")
 let apellido = document.querySelector("#apellidoId")
 let formularioIngresar = document.querySelector("#formularioCrear");
 let productoExistente = false;
+let usuarioActual = []
 let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
 
 //** Agregado de eventos blur (foco) **//
@@ -35,11 +36,17 @@ function validarUsuario(e) {
     e.preventDefault();
     if (validarGeneralCrearUsuario()) {
         if (productoExistente === false) {
+            cargarUsuarioActual();
             crearUsuario();
         } else {
             console.log("no se hace nada");
         }
     }
+}
+function cargarUsuarioActual() {
+    let usuarioLogin = new Usuario(email.value, pass.value);
+    usuarioActual.push(usuarioLogin);
+    localStorage.setItem("usuarioActual", JSON.stringify(usuarioActual));
 }
 
 function crearUsuario() {
