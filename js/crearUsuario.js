@@ -13,7 +13,7 @@ let nombre = document.querySelector("#nombreId")
 let apellido = document.querySelector("#apellidoId")
 let formularioIngresar = document.querySelector("#formularioCrear");
 let productoExistente = false;
-let usuarios = [];
+let listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
 
 //** Agregado de eventos blur (foco) **//
 email.addEventListener("blur", () => {
@@ -44,8 +44,8 @@ function validarUsuario(e) {
 
 function crearUsuario() {
     let usuarioNuevo = new Usuario(nombre.value, apellido.value, email.value, pass.value);
-    usuarios.push(usuarioNuevo);
-    localStorage.setItem("listaUsuarios", JSON.stringify(usuarios));
+    listaUsuarios.push(usuarioNuevo);
+    localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
     limpiarFormulario();
     window.location.replace("../index.html");
 }
