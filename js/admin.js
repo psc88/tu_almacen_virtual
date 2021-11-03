@@ -463,6 +463,8 @@ function borrarTablaEspecias(){
   let tabla = document.querySelector("#tablaEspecias");
   tabla.innerHTML = ""
 }
+
+/* Fc para borrar la Tabla de Usuarios*/
 function borrarTablaUsuarios(){
   let tabla = document.querySelector("#tablaUsuario");
   tabla.innerHTML = ""
@@ -481,3 +483,6 @@ listaUsuarios.forEach((itemUsuario) => {
 crearFilaUsuarios(itemUsuario);
  });
    }
+
+/* Boton para limpiar el formulario*/
+btnlimpiarFormulario.addEventListener("click", limpiarFormulario);
