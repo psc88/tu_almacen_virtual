@@ -4,7 +4,28 @@ let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let listaUsuarios = []
+let listaEmpleados = [
+  {
+    "nombre": "Pablo",
+    "apellido": "castillo",
+    "correo": "pcastillo@hotmail.com",
+    "contraseña": "Pablo123!"
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "Carral",
+    "correo": "ccarral@hotmail.com",
+    "contraseña": "Carral123!"
+  },
+  {
+    "nombre": "Enrico",
+    "apellido": "Palermo",
+    "correo": "epalermo@hotmail.com",
+    "contraseña": "Epalermo132!"
+  }
+];
 let usuarioLogueado = []
+let usuariosTotales = []
 
 //** Carga inicial de los productos a la web */
 cargaInicial();
@@ -17,19 +38,7 @@ function cargaInicial() {
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
   listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || []
   usuarioLogueado = JSON.parse(localStorage.getItem("usuarioActual")) || [];
-
-
-  // for (let i = 0; i < nuevaLista.length; i++) {
-  //   if (email.value === "pcastillo@hotmail.com" && pass.value === "Pablo123!" ||
-  //     email.value === "ccarral@hotmail.com" && pass.value === "Carral123!" ||
-  //     email.value === "epalermo@hotmail.com" && pass.value === "Epalermo132!") {
-  //     //logica para mostar navbar para usuarios
-  //   } else if (email.value === nuevaLista[i].correo && pass.value === nuevaLista[i].contraseña) {
-  //     //logica para mostrar
-  //   }
-  // }
-
-
+  usuariosTotales = listaEmpleados.concat(listaUsuarios);
 
   if (listaProductosMix.length > 0) {
     listaProductosMix.forEach(itemProducto => {
@@ -189,40 +198,59 @@ function crearColumnaEspecias(producto) {
 }
 
 function crearNavbar(usuario){
-  for (let i = 0; i < usuarioLogueado.length; i++) {
+  let contador = 0;
+  for (let i = 0; i < usuariosTotales.length; i++) {
     if(usuario.nombre === "pcastillo@hotmail.com" || usuario.nombre === "ccarral@hotmail.com" || usuario.nombre === "epalermo@hotmail.com" ){
-      let navBar = document.querySelector("#navBarUsuario")
-      navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
-      <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
-        <li class="nav-item">
-          <a
-            class="nav-link active text-white ms-3"
-            aria-current="page"
-            href="#"
-            >Inicio</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white ms-3" href="admin.html">Administrador</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link text-white ms-3" href="nosotros.html"
-            >Acerca de nosotros</a
-          >
-        </li>
-        <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Hola ${listaUsuarios[i].nombre}
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="./favoritos.html">Ver sitio Favoritos</a></li>
-                <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="./login.html">Salir</a></li>
-              </ul>
-        </li>
-      </ul>
-    </div>`
+      contador ++;
+      if(contador === 1){
+        let nombreAdministrador;
+        listaEmpleados.forEach((empleado)=>{
+          switch (usuario.nombre) {
+            case "pcastillo@hotmail.com":
+              nombreAdministrador = "Pablo"
+              break;
+            case "ccarral@hotmail.com":
+              nombreAdministrador = "Carlos"
+              break;
+            case "epalermo@hotmail.com":
+              nombreAdministrador = "Enrico"
+              break;
+            }
+        })
+        let navBar = document.querySelector("#navBarUsuario")
+        navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
+          <li class="nav-item">
+            <a
+              class="nav-link active text-white ms-3"
+              aria-current="page"
+              href="#"
+              >Inicio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="admin.html">Administrador</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white ms-3" href="nosotros.html"
+              >Acerca de nosotros</a
+            >
+          </li>
+          <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Hola ${nombreAdministrador}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="./favoritos.html">Ver sitio Favoritos</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="./login.html">Salir</a></li>
+                </ul>
+          </li>
+        </ul>
+      </div>`
+      }
     } else if (usuario.nombre === listaUsuarios[i].correo){
+      console.log(listaUsuarios[i].correo)
       let navBar = document.querySelector("#navBarUsuario")
       navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
