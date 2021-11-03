@@ -3,31 +3,33 @@ import {
   validarMail,
   validarGeneralLogin,
 } from "./validaciones.js";
+import { Usuario } from "./clasesUsuarios.js";
 
 //** Extracion de los imput del los Productos **//
 let email = document.querySelector("#inputEmail");
 let pass = document.querySelector("#inputPassword");
 let formularioIngresar = document.querySelector("#formularioLogin");
 let productoExistente = false;
+let usuarioActual = []
 let listaEmpleados = [
-    {
-      "nombre": "Pablo",
-      "apellido": "castillo",
-      "correo": "pcastillo@hotmail.com",
-      "contraseña": "Pablo123!"
-    },
-    {
-      "nombre": "Carlos",
-      "apellido": "Carral",
-      "correo": "ccarral@hotmail.com",
-      "contraseña": "Carral123!"
-    },
-    {
-      "nombre": "Enrico",
-      "apellido": "Palermo",
-      "correo": "epalermo@hotmail.com",
-      "contraseña": "Epalermo132!"
-    }
+  {
+    "nombre": "Pablo",
+    "apellido": "castillo",
+    "correo": "pcastillo@hotmail.com",
+    "contraseña": "Pablo123!"
+  },
+  {
+    "nombre": "Carlos",
+    "apellido": "Carral",
+    "correo": "ccarral@hotmail.com",
+    "contraseña": "Carral123!"
+  },
+  {
+    "nombre": "Enrico",
+    "apellido": "Palermo",
+    "correo": "epalermo@hotmail.com",
+    "contraseña": "Epalermo132!"
+  }
 ];
 
 //** Agregado de eventos blur (foco) **//
@@ -43,25 +45,32 @@ function validarUsuario(e) {
   e.preventDefault();
   if (validarGeneralLogin()) {
     if (productoExistente === false) {
-        comprobarDatos();
+      cargarUsuario();
+      comprobarDatos();
     }
   }
 }
 
+function cargarUsuario() {
+  let usuarioLogin = new Usuario(email.value, pass.value);
+  usuarioActual.push(usuarioLogin);
+  localStorage.setItem("usuarioActual", JSON.stringify(usuarioActual));
+}
+
 function comprobarDatos() {
-    let nuevaLista = listaEmpleados.concat(JSON.parse(localStorage.getItem("listaUsuarios")) || [])
- 
-    for (let i = 0; i < nuevaLista.length; i++) {
-        if(email.value === "pcastillo@hotmail.com" && pass.value === "Pablo123!" ||
-        email.value === "ccarral@hotmail.com" && pass.value === "Carral123!" ||
-        email.value === "epalermo@hotmail.com" && pass.value === "Epalermo132!"){
-            window.location.replace("../admin.html");
-        } else if(email.value === nuevaLista[i].correo && pass.value === nuevaLista[i].contraseña) {
-            window.location.replace("../index.html");
-        }
+  let nuevaLista = listaEmpleados.concat(JSON.parse(localStorage.getItem("listaUsuarios")) || [])
+
+  for (let i = 0; i < nuevaLista.length; i++) {
+    if (email.value === "pcastillo@hotmail.com" && pass.value === "Pablo123!" ||
+      email.value === "ccarral@hotmail.com" && pass.value === "Carral123!" ||
+      email.value === "epalermo@hotmail.com" && pass.value === "Epalermo132!") {
+      window.location.replace("../admin.html");
+    } else if (email.value === nuevaLista[i].correo && pass.value === nuevaLista[i].contraseña) {
+      window.location.replace("../index.html");
     }
-    let alerta = document.querySelector("#mensajeAlertaErrorLogin");
-    alerta.className = "alert alert-danger mt-4";
+  }
+  let alerta = document.querySelector("#mensajeAlertaErrorLogin");
+  alerta.className = "alert alert-danger mt-4";
 }
 
 
