@@ -198,7 +198,7 @@ function crearFilaProductosEspecias(itemProducto) {
     <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
     <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
-      <button class="btn btn-warning mt-2" eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
+      <button class="btn btn-warning mt-2" onclick="eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
     </td>
   </tr>`;
 }
@@ -209,8 +209,7 @@ function crearFilaUsuarios(itemUsuario) {
   <td>${itemUsuario.correo}</td>
   <td>${itemUsuario.contraseña}</td>
   <td class="text-center">
-    <button class="btn btn-warning mt-2>Editar</button>
-    <button class="btn btn-warning mt-2>Borrar</button>
+  <button class="btn btn-warning mt-2" onclick="eliminarUsuario('${itemUsuario.correo}')">Borrar</button>
   </td>
 </tr>`
 }
@@ -235,7 +234,6 @@ function cargaInicialTabla(){
   listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
   listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
-  console.log(listaUsuarios);
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
   });
@@ -330,27 +328,6 @@ window.eliminarProductoEspecias = (codigo) => {
   });
 
 }
-
-/* Fc para eliminar el usuario */
-window.eliminarUsuario = (codigo) => {
-  let usuarioFiltrado = listaUsuarios.filter(
-    (itemUsuarios ) => {
-      return itemUsuarios.codigo != codigo;
-    }
-  );
-  listaProductosEspecias = productosFiltradoEspecias;
-  localStorage.setItem(
-    "listaProductosEspecias",
-    JSON.stringify(listaProductosEspecias)
-  );
-  borrarFilasEspecias();
-  listaProductosEspecias.forEach((itemProducto) => {
-    crearFilaProductosEspecias(itemProducto);
-  });
-
-}
-
-
 
 // se prepara la edicion por categoria
 
@@ -486,4 +463,21 @@ function borrarTablaEspecias(){
   let tabla = document.querySelector("#tablaEspecias");
   tabla.innerHTML = ""
 }
+function borrarTablaUsuarios(){
+  let tabla = document.querySelector("#tablaUsuario");
+  tabla.innerHTML = ""
+}
 
+/* Fc para eliminar el Usuario  */
+window.eliminarUsuario = (codigo) => {
+  let usuarioFiltrado = listaUsuarios.filter((listaUsuarios ) => {
+  return listaUsuarios.correo != codigo;
+  });
+ listaUsuarios = usuarioFiltrado;
+console.log(listaUsuarios);
+localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
+borrarTablaUsuarios()
+listaUsuarios.forEach((itemUsuario) => {
+crearFilaUsuarios(itemUsuario);
+ });
+   }
