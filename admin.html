@@ -48,19 +48,19 @@
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
               <li class="nav-item">
                 <a
-                  class="nav-link text-white ms-3"
+                  class="nav-link text-white ms-3 fw-bold"
                   aria-current="page"
                   href="../index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-white ms-3" href="admin.html"
+                <a class="nav-link active text-white ms-3 fw-bold" href="admin.html"
                   >Admin</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white ms-3" href="nosotros.html"
+                <a class="nav-link text-white ms-3 fw-bold" href="nosotros.html"
                   >Acerca de nosotros</a
                 >
               </li>
@@ -69,16 +69,16 @@
         </div>
       </nav>
     </header>
-    <main>
+    <main class="bgBody">
       <section class="container">
-        <h1 class="text-center my-5">Administrador de Productos</h1>
+        <h1 class="text-center p-4">Administrador de Productos</h1>
       </section>
-      <section class="container bg-white my-5 textoCentrado">
-        <article>
-          <h2 class="text-center pt-3">Producto Varios</h2>
-          <form class="p-5" id="formularioProducto">
+      <section class="container bgFormAdmin text-white my-5 textoCentrado rounded-3 border border-2">
+        <h2 class="text-center pt-3">Productos Varios</h2>
+        <article class="d-flex justify-content-center">
+          <form class="p-3 wformulario"  id="formularioProducto">
             <div class="mb-3">
-              <label for="cagetoriaProducto" class="form-label"
+              <label for="cagetoriaProducto" class="form-label fw-bold"
                 >Categoria</label
               >
               <input
@@ -92,7 +92,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="codigoId" class="form-label">Codigo</label>
+              <label for="codigoId" class="form-label fw-bold">Codigo</label>
               <input
                 id="codigoId"
                 type="text"
@@ -103,7 +103,7 @@
             </div>
 
             <div class="mb-3">
-              <label for="nombreProducto" class="form-label">Producto</label>
+              <label for="nombreProducto" class="form-label fw-bold">Producto</label>
               <input
                 id="nombreProducto"
                 type="text"
@@ -113,7 +113,7 @@
               <div class="invalid-feedback">Este campo es obligatorio</div>
             </div>
             <div class="mb-3">
-              <label for="descripcionProducto" class="form-label"
+              <label for="descripcionProducto" class="form-label fw-bold"
                 >Descripcion</label
               >
               <input
@@ -124,7 +124,7 @@
               />
             </div>
             <div class="mb-3">
-              <label for="cantidadProducto" class="form-label">Cantidad</label>
+              <label for="cantidadProducto" class="form-label fw-bold">Cantidad</label>
               <input
                 type="text"
                 class="form-control"
@@ -136,7 +136,7 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="urlProducto" class="form-label" id="inputDisable"
+              <label for="urlProducto" class="form-label fw-bold" id="inputDisable"
                 >URL</label
               >
               <input
@@ -157,9 +157,9 @@
           </form>
         </article>
       </section>
-      <section class="container">
+      <section class="container ">
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
+          <table class="table rounded-3">
             <h1>Mix</h1>
             <thead>
               <tr>
@@ -175,7 +175,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
+          <table class="table ">
             <h1>Frutas Secas</h1>
             <thead>
               <tr>
@@ -191,7 +191,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
+          <table class="table ">
             <h1>Inflados</h1>
             <thead>
               <tr>
@@ -207,7 +207,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
+          <table class="table ">
             <h1>Especias</h1>
             <thead>
               <tr>
@@ -223,8 +223,8 @@
         </article>
         <hr />
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
-            <h1>Usuarios</h1>
+          <table class="table ">
+            <h2 class="fs-1">Usuarios <span><i class="fas fa-users"></i></span></h2>
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
@@ -237,8 +237,8 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table table-dark table-striped">
-            <h1>Empleados</h1>
+          <table class="table ">
+            <h2 class="fs-1">Empleados <span><i class="fas fa-people-carry"></i></span></h2>
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
@@ -252,65 +252,72 @@
         </article>
       </section>
     </main>
-    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
-      <section class="container mt-3">
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-4 col-footer mb-4">
-            <div>
-              <a href="../index.html">
-                <img
-                  src="/img/logo footer.svg"
-                  alt="logo tu almacen virtual "
-                  class="w-25 logo-footer"
-                />
-              </a>
+    <footer class="text-white fontNav textoCentrado bgfooter">
+      <section class="bgFooter2 h-100 pb-1 pt-3">
+        <section class="container mt-3">
+          <article class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-footer mb-4">
+              <div>
+                <a href="index.html">
+                  <img
+                    src="/img/logo footer.svg"
+                    alt="logo tu almacen virtual "
+                    class="w-25 logo-footer"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-            <h5>Navegacion</h5>
-            <div>
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="../index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Acerca de nosotros</a>
-                </li>
-              </ul>
+            <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
+              <h5>Navegacion</h5>
+              <div>
+                <ul class="navbar-nav mb-2">
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="index.html">Inicio</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="admin.html">Admin</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="admin.html">Ingresá</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link text-white" href="nosotros.html"
+                      >Acerca de nosotros</a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-            <h5>Seguinos en nuestras redes:</h5>
-            <div class="col-sm-12 col-md-10 text-center">
-              <a
-                href="./error.html"
-                target="_blank"
-                class="text-decoration-none"
-              >
-                <i class="fab fa-instagram-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-facebook-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-twitter-square text-white fa-2x"></i>
-              </a>
+            <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
+              <h5>Seguinos en nuestras redes:</h5>
+              <div class="col-sm-12 col-md-10 text-center">
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="fab fa-instagram-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-facebook-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-twitter-square text-white fa-2x"></i>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </section>
+        <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
       </section>
-      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
     </footer>
     <script src="js/bootstrap.min.js"></script>
     <script type="module" src="js/admin.js"></script>

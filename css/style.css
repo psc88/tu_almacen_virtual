@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Londrina+Outline&family=Orbitron:wght@500&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Irish+Grover&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Irish+Grover&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:wght@600&display=swap");
 
 /* paginaError */
 .juego {
@@ -23,13 +23,10 @@
   background-image: url("../img/juegoAhorcado.png");
 }
 
-
 /* Pagina Favoritos*/
 .panelUsuario {
   width: 40%;
 }
-
-
 
 /* Estilo navbar */
 .bgIndex {
@@ -59,11 +56,11 @@
 /* pagina principal */
 
 .tituloPrincipal {
-  font-family: 'Inconsolata', monospace;
+  font-family: "Inconsolata", monospace;
   font-size: 50px;
 }
 .tituloCategorias {
-  font-family: 'Cabin', sans-serif;
+  font-family: "Cabin", sans-serif;
 }
 
 .bgTituloCatalogo {
@@ -76,36 +73,69 @@
   background-size: 350px;
 }
 .bgProductos {
- background-color: rgba(255, 255, 255, 0.785);
+  background-color: rgba(255, 255, 255, 0.507);
 }
 
 /* background footer*/
-.bgfooter{
+.bgfooter {
   background-image: url(/img/bg\ frutos\ y\ marca.png);
+  background-size: 1400px;
 }
 .bgFooter2 {
   background: rgb(108, 55, 237);
   background: linear-gradient(
     90deg,
-    rgba(107, 55, 237, 0.890  ) 5%,
-    rgba(118, 67, 238, 0.900) 55%,
-    rgba(121, 73, 238, 0.900) 100%,
-    rgba(137, 94, 239, 0.900) 100%
+    rgba(107, 55, 237, 0.89) 5%,
+    rgba(118, 67, 238, 0.9) 55%,
+    rgba(121, 73, 238, 0.9) 100%,
+    rgba(137, 94, 239, 0.9) 100%
   );
 }
-.bgTabla1 {
-  background: rgb(108, 55, 237);
-  
+
+.wformulario{
+  width: 85%;
 }
 
+/* Bg de tablas */
+thead {
+  background: #433292;
+  color: white;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #574c8a;
+  color: white;
+}
+tbody tr:nth-child(odd) {
+  background-color: #6b698d;
+  color: white;
+}
+
+
+table {
+  border: 2px solid #a083ef;
+}
+
+.bgFormAdmin{
+  background-color: #6b698d;
+}
+
+
 /* backGround Login/Create */
-.fondoLoginCreate{
-  background-color:rgba(50, 9, 199, 0.699);
-  background-image:
-  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+.fondoLoginCreate {
+  background-color: rgba(50, 9, 199, 0.699);
+  background-image: radial-gradient(
+      white,
+      rgba(255, 255, 255, 0.2) 2px,
+      transparent 40px
+    ),
+    radial-gradient(white, rgba(255, 255, 255, 0.15) 1px, transparent 30px),
+    radial-gradient(white, rgba(255, 255, 255, 0.1) 2px, transparent 40px),
+    radial-gradient(
+      rgba(255, 255, 255, 0.4),
+      rgba(255, 255, 255, 0.1) 2px,
+      transparent 30px
+    );
   background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
   background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
 }
@@ -117,7 +147,7 @@
     width: 100%;
     bottom: 0;
   }
-  .textoCentrado{
+  .textoCentrado {
     text-align: center;
   }
 }
@@ -128,10 +158,7 @@
     width: 100%;
     bottom: 0;
   }
-  .textoCentrado{
+  .textoCentrado {
     text-align: center;
   }
 }
-
-
-
