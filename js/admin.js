@@ -330,6 +330,28 @@ window.eliminarProductoEspecias = (codigo) => {
   });
 
 }
+
+/* Fc para eliminar el usuario */
+window.eliminarUsuario = (codigo) => {
+  let usuarioFiltrado = listaUsuarios.filter(
+    (itemUsuarios ) => {
+      return itemUsuarios.codigo != codigo;
+    }
+  );
+  listaProductosEspecias = productosFiltradoEspecias;
+  localStorage.setItem(
+    "listaProductosEspecias",
+    JSON.stringify(listaProductosEspecias)
+  );
+  borrarFilasEspecias();
+  listaProductosEspecias.forEach((itemProducto) => {
+    crearFilaProductosEspecias(itemProducto);
+  });
+
+}
+
+
+
 // se prepara la edicion por categoria
 
   window.prepararEdicion = (categoriaP,codigo)=>{
