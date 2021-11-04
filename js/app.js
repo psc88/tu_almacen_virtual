@@ -1,3 +1,4 @@
+import { Producto } from "./clasesProductos.js";
 //** array de los productos */
 let listaProductosMix = [];
 let listaProductosFrutas = [];
@@ -117,7 +118,7 @@ function crearColumnaMix(producto) {
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -148,7 +149,7 @@ function crearColumnaFrutas(producto) {
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -179,7 +180,7 @@ function crearColumnaInflados(producto) {
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -192,10 +193,11 @@ function crearColumnaEspecias(producto) {
     <td>${producto.descripcion}</td>
     <td>${producto.cantidad}</td>
     <td class="text-center">
-      <button class="btn btn-warning" onclick="prepararEdicion()"><i class="far fa-heart"></i></button>
+      <button class="btn btn-warning"><a href="error.html"><i class="far fa-heart"></i></a></button>
     </td>
   </tr>`;
 }
+
 
 function crearNavbar(usuario){
   let contador = 0;
