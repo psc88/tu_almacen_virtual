@@ -117,7 +117,7 @@ function crearColumnaMix(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-          <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> 
+          <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button> 
         </div>
       </div>
     </div>
@@ -150,7 +150,7 @@ function crearColumnaFrutas(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
+          <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button>  
       </div>
       </div>
     </div>
@@ -184,7 +184,7 @@ function crearColumnaInflados(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
+         <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button>
       </div>
     </div>
   </article>`;
@@ -197,7 +197,7 @@ function crearColumnaEspecias(producto) {
     <td class="text-white">${producto.descripcion}</td>
     <td class="text-white">${producto.cantidad}</td>
     <td class="text-center ">
-      <button class="btn btn-warning" onclick="prepararEdicion()"><i class="far fa-heart"></i></button>
+    <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button> 
     </td>
   </tr>`;
 }
