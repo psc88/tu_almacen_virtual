@@ -288,6 +288,6 @@ function crearNavbar(usuario) {
   }
 }
 
-function desloguear() {
+window.desloguear = () => {
   localStorage.removeItem("usuarioActual")
 }
