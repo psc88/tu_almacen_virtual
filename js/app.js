@@ -1,3 +1,4 @@
+import { Producto } from "./clasesProductos.js";
 //** array de los productos */
 let listaProductosMix = [];
 let listaProductosFrutas = [];
