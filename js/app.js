@@ -5,13 +5,15 @@ let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let listaUsuarios = []
+let usuarioLogueado = []
+let usuariosTotales = []
 let codigoFavorito = [];
 let cantidadFavorito = [];
 let descripcionFavorito = [];
 let productoFavorito = [];
 let urlFavorito = [];
 let categoriaFavorito = [];
-let listaProductosFavorito = [];
+let listaProductosFavorito = JSON.parse(localStorage.getItem("listaProductosFavoritos")) || [];
 let listaEmpleados = [
   {
     "nombre": "Pablo",
@@ -32,8 +34,7 @@ let listaEmpleados = [
     "contraseña": "Epalermo132!"
   }
 ];
-let usuarioLogueado = []
-let usuariosTotales = []
+
 
 //** Carga inicial de los productos a la web */
 cargaInicial();
@@ -125,7 +126,7 @@ function crearColumnaMix(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-          <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button> 
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')" ><i class="far fa-heart"></i></button>
         </div>
       </div>
     </div>
@@ -158,7 +159,7 @@ function crearColumnaFrutas(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-          <button class="btn btn-warning"><a href="./error.html"><i class="far fa-heart"></i></a></button>  
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')" ><i class="far fa-heart"></i></button>  
       </div>
       </div>
     </div>
@@ -334,18 +335,6 @@ window.convertirFavorito = (categoriaProductoFavorito, codigo) => {
       categoriaFavorito = productoBuscado3.categoria
       agregarProducto();
       break;
-    case 'especias':
-      let productoBuscado4 = listaProductosEspecias.find((itemProducto) => {
-        return itemProducto.codigo == codigo
-      })
-      codigoFavorito = productoBuscado4.codigo
-      cantidadFavorito = productoBuscado4.cantidad
-      descripcionFavorito = productoBuscado4.descripcion
-      productoFavorito = productoBuscado4.producto
-      urlFavorito = productoBuscado4.url
-      categoriaFavorito = productoBuscado4.categoria
-      agregarProducto();
-      break;
   }
 }
 
@@ -365,7 +354,8 @@ function agregarProducto() {
   );
 }
 
-
+// funcion para desloguear usuarios
 window.desloguear = () => {
   localStorage.removeItem("usuarioActual")
+  localStorage.removeItem("listaProductosFavoritos")
 }

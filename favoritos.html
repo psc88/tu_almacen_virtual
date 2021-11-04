@@ -21,6 +21,7 @@
       src="https://kit.fontawesome.com/012f3cd5dc.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body class="bgSeccionProductos">
     <header>
@@ -67,51 +68,7 @@
     <main>
       <section class="container bg-light mb-5">
         <div class="my-2"><h2 class="pt-3 ps-4">Tus Favoritos</h2></div>
-        <section class="my-1 flex-row">
-          <article class="row border-bottom p-2">
-            <div class="col-sm-3 col-md-3">
-              <div class="img-fluid d-flex justify-content-center">
-                <img
-                  src="/img/producto A.png"
-                  class="card-img-top w-50"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div class="col-sm-4 col-md-4">
-              <div class="w-100">
-                <h5 class="card-title">Manteca de mani</h5>
-                <p class="card-text">
-                  <span class="badge bg-success me-2">Articulo:</span>1004<br />
-                  <span class="fw-bold"> Descripción: </span> Manteca de Mani
-                  Marca King 250 grms
-                </p>
-                <button class="btn text-primary"><a href="./error.html">Eliminar</a></button>
-              </div>
-            </div>
-          </article>
-          <article class="row border-bottom p-2">
-            <div class="col-sm-3 col-md-3">
-              <div class="img-fluid d-flex justify-content-center">
-                <img
-                  src="/img/producto A.png"
-                  class="card-img-top w-50"
-                  alt="..."
-                />
-              </div>
-            </div>
-            <div class="col-sm-4 col-md-4">
-              <div class="w-100">
-                <h5 class="card-title">Manteca de mani</h5>
-                <p class="card-text">
-                  <span class="badge bg-success me-2">Articulo:</span>1004<br />
-                  <span class="fw-bold"> Descripción: </span> Manteca de Mani
-                  Marca King 250 grms
-                </p>
-                <button class="btn text-primary"><a href="./error.html">Eliminar</a></button>
-              </div>
-            </div>
-          </article>
+        <section class="my-1 flex-row" id="cargaFavoritos">
         </section>
       </section>
     </main>
@@ -185,8 +142,7 @@
         <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
       </section>
     </footer>
-    <script src="js/favorito.js"></script>
+    <script src="js/favoritos.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <script type="module" src="js/admin.js"></script>
   </body>
 </html>

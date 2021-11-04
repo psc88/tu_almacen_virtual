@@ -449,6 +449,8 @@ window.eliminarProductoEspecias = (codigo) => {
 // Edicion por categoria de productos
 
 window.prepararEdicion = (categoriaP, codigo) => {
+  codigoForm.setAttribute("disabled", "")
+  categoria.setAttribute("disabled", "")
   switch (categoriaP) {
     case 'mix':
       let productoBuscado = listaProductosMix.find((itemProducto) => {
