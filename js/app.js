@@ -118,8 +118,8 @@ function crearColumnaMix(producto) {
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
         <div id="agregarFavoritos">
-        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
-      </div>
+          <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> 
+        </div>
       </div>
     </div>
   </article>`;
@@ -256,8 +256,7 @@ function crearNavbar(usuario){
         </ul>
       </div>`
       }
-    } else if (usuario.nombre === listaUsuarios[i].correo){
-      console.log(listaUsuarios[i].correo)
+    } else if(usuario.nombre === listaUsuarios[i].correo){
       let navBar = document.querySelector("#navBarUsuario")
       navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
@@ -288,7 +287,6 @@ function crearNavbar(usuario){
     </div>`
     }
   }
-  
 }
 
 function desloguear() {
