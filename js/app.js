@@ -114,10 +114,12 @@ function crearColumnaMix(producto) {
 
       <div class="card-body border-top">
         <p class="card-text">
-          <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
+          <span class="badge bg-success me-2">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <div id="agregarFavoritos">
+        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
+      </div>
       </div>
     </div>
   </article>`;
@@ -145,10 +147,12 @@ function crearColumnaFrutas(producto) {
   
       <div class="card-body border-top">
         <p class="card-text">
-          <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
+          <span class="badge bg-success me-2">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <div id="agregarFavoritos">
+        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
+      </div>
       </div>
     </div>
   </article>`;
@@ -175,11 +179,13 @@ function crearColumnaInflados(producto) {
       </div>
   
       <div class="card-body border-top">
+      
         <p class="card-text">
-          <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
+          <span class="badge bg-success me-2">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <div id="agregarFavoritos">
+        <button class="btn btn-warning" onclick="convertirfav()"><i class="far fa-heart"></i></button> </div>
       </div>
     </div>
   </article>`;
@@ -188,14 +194,15 @@ function crearColumnaInflados(producto) {
 function crearColumnaEspecias(producto) {
   let grillaFrutas = document.querySelector("#principalEspecias");
   grillaFrutas.innerHTML += `<tr>
-    <th scope="row">${producto.producto}</th>
-    <td>${producto.descripcion}</td>
-    <td>${producto.cantidad}</td>
-    <td class="text-center">
+    <th scope="row" class="text-white">${producto.producto}</th>
+    <td class="text-white">${producto.descripcion}</td>
+    <td class="text-white">${producto.cantidad}</td>
+    <td class="text-center ">
       <button class="btn btn-warning" onclick="prepararEdicion()"><i class="far fa-heart"></i></button>
     </td>
   </tr>`;
 }
+/* funcion para crear el <navbar>*/
 
 function crearNavbar(usuario){
   let contador = 0;
@@ -243,7 +250,7 @@ function crearNavbar(usuario){
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                   <li><a class="dropdown-item" href="./favoritos.html">Ver sitio Favoritos</a></li>
                   <li><hr class="dropdown-divider"></li>
-                  <li><a class="dropdown-item" href="./login.html">Salir</a></li>
+                  <li><a class="dropdown-item" onclick="desloguear()" href="./login.html">Salir</a></li>
                 </ul>
           </li>
         </ul>
@@ -274,7 +281,7 @@ function crearNavbar(usuario){
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <li><a class="dropdown-item" href="./favoritos.html">Tus Favoritos</a></li>
                 <li><hr class="dropdown-divider"></li>
-                <li><a class="dropdown-item" href="./login.html">Salir</a></li>
+                <li><a class="dropdown-item" onclick="desloguear()" href="./login.html">Salir</a></li>
               </ul>
         </li>
       </ul>
@@ -282,4 +289,8 @@ function crearNavbar(usuario){
     }
   }
   
+}
+
+function desloguear() {
+  localStorage.removeItem("usuarioActual")
 }

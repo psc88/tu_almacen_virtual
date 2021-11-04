@@ -21,6 +21,7 @@ let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
 let listaUsuarios = [];
+let usuarioActual = [];
 let listaEmpleados = [
   {
     "nombre": "Pablo",
@@ -215,8 +216,7 @@ function crearFilaProductosEspecias(itemProducto) {
     <td>${itemProducto.producto}</td>
     <td>${itemProducto.descripcion}</td>
     <td>${itemProducto.cantidad}</td>
-    <td><a href='${itemProducto.url}' class='text-decoration-none text-white'>${itemProducto.producto}</a></td>
-    <td class="text-center">
+       <td class="text-center">
       <button class="btn btn-warning mt-2" onclick="prepararEdicion('${itemProducto.categoria}','${itemProducto.codigo}')">Editar</button>
       <button class="btn btn-warning mt-2" onclick="eliminarProductoEspecias('${itemProducto.codigo}')">Borrar</button>
     </td>
@@ -246,14 +246,29 @@ function crearFilasEmpleado(itemEmpleado) {
 </tr>`
 }
 
+function crearNavbar(usuario) {
+  let navBar = document.querySelector("#desloguearAdministrador")
+  navBar.innerHTML += `<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+   Hola ${usuario.nombre} 
+  </a>
+  <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <li><a class="dropdown-item" href="./favoritos.html">Ver sitio Favoritos</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" onclick="desloguear()" href="./login.html">Salir</a></li>
+  </ul>`
+}
+window.desloguear = () => {
+  localStorage.removeItem("usuarioActual")
+}
 //** Funcion para cargar los datos en la tabla del localstorage **//
 
-function cargaInicialTabla(){
+function cargaInicialTabla() {
   listaProductosMix = JSON.parse(localStorage.getItem("listaProductosMix")) || [];
   listaProductosFrutas = JSON.parse(localStorage.getItem("listaProductosFrutas")) || [];
   listaProductosInflados = JSON.parse(localStorage.getItem("listaProductosInflados")) || [];
   listaProductosEspecias = JSON.parse(localStorage.getItem("listaProductosEspecias")) || [];
   listaUsuarios = JSON.parse(localStorage.getItem("listaUsuarios")) || [];
+  usuarioActual = JSON.parse(localStorage.getItem("usuarioActual")) || [];
   listaProductosMix.forEach((itemProducto) => {
     crearFilaProductosMix(itemProducto);
   });
@@ -272,6 +287,9 @@ function cargaInicialTabla(){
   listaEmpleados.forEach((itemEmpleado) => {
     crearFilasEmpleado(itemEmpleado)
   });
+  usuarioActual.forEach((usuario) => {
+    crearNavbar(usuario)
+  })
 }
 
 

@@ -104,9 +104,8 @@ export function validarMailCrear(input){
 }
 
 export function validarNombre(input){
-  let patron = /^[a-z]{1,20}$/;
-  let patron1 = /^[A-Z]{1,20}$/;
-  if(patron.test(input.value) || patron1.test(input.value)){
+  let patron = /^[A-Z]{1,20}$/;
+  if(patron.test(input.value.toUpperCase())){
     input.className = "form-control is-valid";
     return true;
   } else {
