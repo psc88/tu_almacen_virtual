@@ -256,7 +256,7 @@ function crearNavbar(usuario) {
         </ul>
         `
       }
-    } else if (usuario.nombre === listaUsuarios[i].correo) {
+    } else if (listaUsuarios[i] && usuario.nombre === listaUsuarios[i].correo) {
       let navBar = document.querySelector("#navbarTuAlmacen")
       navBar.innerHTML += `
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
