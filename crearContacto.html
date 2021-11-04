@@ -73,72 +73,83 @@
       </nav>
     </header>
     <main class="container">
-        <article class="d-flex justify-content-center">
-          <article
-            class="row align-items-center text text-center w-75 text-white mt-5"
-          >
-            <hr class="col w-25 ms-4" />
-            <i class="fas fa-user my-4 col fs-2 w-50"><p>Crea tu cuenta</p></i>
-            <hr class="col w-25 me-4" />
-          </article>
+      <article class="d-flex justify-content-center">
+        <article
+          class="row align-items-center text text-center w-75 text-white mt-5"
+        >
+          <hr class="col w-25 ms-4" />
+          <i class="fas fa-user my-4 col fs-2 w-50"><p>Crea tu cuenta</p></i>
+          <hr class="col w-25 me-4" />
         </article>
-        <article class="d-flex justify-content-center">
-          <form class="p-4 w-75" id="formularioCrear">
-            <div class="row">
-              <div class="mb-3 col-lg-6">
-                <label for="nombreId" class="form-label text-white fw-bold">Nombre</label>
-                <input
-                  id="nombreId"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ingrese nombre"
-                />
-                <div class="invalid-feedback">Este campo es obligatorio, Solo letras</div>
-              </div>
-              <div class="mb-3 col-lg-6">
-                <label for="apellidoId" class="form-label text-white fw-bold">Apellido</label>
-                <input
-                  id="apellidoId"
-                  type="text"
-                  class="form-control"
-                  placeholder="Ingrese apellido"
-                />
-                <div class="invalid-feedback">Este campo es obligatorio, Solo letras</div>
-              </div>
-            </div>
-            <div class="mb-3">
-              <label for="correoId" class="form-label text-white fw-bold"
-                >Correo Electronico</label
+      </article>
+      <article class="d-flex justify-content-center">
+        <form class="p-4 w-75" id="formularioCrear">
+          <div class="row">
+            <div class="mb-3 col-lg-6">
+              <label for="nombreId" class="form-label text-white fw-bold"
+                >Nombre</label
               >
               <input
-                id="correoId"
-                type="mail"
+                id="nombreId"
+                type="text"
                 class="form-control"
-                placeholder="usuario@"
+                placeholder="Ingrese nombre"
               />
-            </div>
-            <div class="mb-3">
-              <label for="passId" class="form-label text-white fw-bold">Contraseña</label>
-              <input
-                type="password"
-                class="form-control"
-                id="passId"
-                placeholder="Ingrese Contraseña"
-              />
-              <div class="invalid-feedback">
-                Este campo es obligatorio.
+              <div class="invalid-feedback text-white fs-6">
+                Este campo es obligatorio, Solo letras
               </div>
             </div>
-                <button class="btn btn-primary fs-5" type="submit">Confirmar</button>
-                <div
-                  class="alert alert-danger mt-4 d-none"
-                  role="alert"
-                  id="mensajeAlertaCrearUsuario"
-                >
-                  Revise la informacion, debe completar todos los datos
-                </div>
-          </form>
-        </article>
+            <div class="mb-3 col-lg-6">
+              <label for="apellidoId" class="form-label text-white fw-bold"
+                >Apellido</label
+              >
+              <input
+                id="apellidoId"
+                type="text"
+                class="form-control"
+                placeholder="Ingrese apellido"
+              />
+              <div class="invalid-feedback text-white fs-6">
+                Este campo es obligatorio, Solo letras
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="correoId" class="form-label text-white fw-bold"
+              >Correo Electronico</label
+            >
+            <input
+              id="correoId"
+              type="mail"
+              class="form-control"
+              placeholder="usuario@"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="passId" class="form-label text-white fw-bold"
+              >Contraseña</label
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="passId"
+              placeholder="Ingrese Contraseña"
+            />
+            <div class="invalid-feedback text-white fs-6">
+              Este campo es obligatorio, tiene que tener una (mayuscula,
+              expresión, número).
+            </div>
+          </div>
+          <button class="btn btn-primary fs-5" type="submit">Confirmar</button>
+          <div
+            class="alert alert-danger mt-4 d-none"
+            role="alert"
+            id="mensajeAlertaCrearUsuario"
+          >
+            Revise la informacion, debe completar todos los datos
+          </div>
+        </form>
+      </article>
     </main>
     <script src="/js/bootstrap.min.js"></script>
     <script type="module" src="./js/crearUsuario.js"></script>
