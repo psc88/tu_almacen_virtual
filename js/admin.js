@@ -625,7 +625,6 @@ window.eliminarUsuario = (codigo) => {
         return listaUsuarios.correo != codigo;
         });
        listaUsuarios = usuarioFiltrado;
-      console.log(listaUsuarios);
       localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
       borrarTablaUsuarios()
       listaUsuarios.forEach((itemUsuario) => {
