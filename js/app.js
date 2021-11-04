@@ -60,13 +60,13 @@ function cargaInicial() {
       crearColumnaEspecias(itemProducto);
     });
   }
-  if (usuarioLogueado.length > 0){
+  if (usuarioLogueado.length > 0) {
     usuarioLogueado.forEach(usuario => {
       crearNavbar(usuario)
     });
   } else {
-    let navBar = document.querySelector("#navBarUsuario")
-      navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
+    let navBar = document.querySelector("#navbarTuAlmacen")
+    navBar.innerHTML += `
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
         <li class="nav-item">
           <a
@@ -86,8 +86,7 @@ function cargaInicial() {
             >Crear Cuenta</a
           >
         </li>
-      </ul>
-    </div>`
+      </ul>`
   }
 }
 
@@ -202,16 +201,16 @@ function crearColumnaEspecias(producto) {
     </td>
   </tr>`;
 }
-/* funcion para crear el <navbar>*/
 
-function crearNavbar(usuario){
+/* funcion para crear el navbar */
+function crearNavbar(usuario) {
   let contador = 0;
   for (let i = 0; i < usuariosTotales.length; i++) {
-    if(usuario.nombre === "pcastillo@hotmail.com" || usuario.nombre === "ccarral@hotmail.com" || usuario.nombre === "epalermo@hotmail.com" ){
-      contador ++;
-      if(contador === 1){
+    if (usuario.nombre === "pcastillo@hotmail.com" || usuario.nombre === "ccarral@hotmail.com" || usuario.nombre === "epalermo@hotmail.com") {
+      contador++;
+      if (contador === 1) {
         let nombreAdministrador;
-        listaEmpleados.forEach((empleado)=>{
+        listaEmpleados.forEach((empleado) => {
           switch (usuario.nombre) {
             case "pcastillo@hotmail.com":
               nombreAdministrador = "Pablo"
@@ -222,10 +221,10 @@ function crearNavbar(usuario){
             case "epalermo@hotmail.com":
               nombreAdministrador = "Enrico"
               break;
-            }
+          }
         })
-        let navBar = document.querySelector("#navBarUsuario")
-        navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
+        let navBar = document.querySelector("#navbarTuAlmacen")
+        navBar.innerHTML += `
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
           <li class="nav-item">
             <a
@@ -254,11 +253,11 @@ function crearNavbar(usuario){
                 </ul>
           </li>
         </ul>
-      </div>`
+        `
       }
-    } else if(usuario.nombre === listaUsuarios[i].correo){
-      let navBar = document.querySelector("#navBarUsuario")
-      navBar.innerHTML += `<div class="collapse navbar-collapse" id="navbarTuAlmacen">
+    } else if (usuario.nombre === listaUsuarios[i].correo) {
+      let navBar = document.querySelector("#navbarTuAlmacen")
+      navBar.innerHTML += `
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
         <li class="nav-item">
           <a
@@ -283,8 +282,7 @@ function crearNavbar(usuario){
                 <li><a class="dropdown-item" onclick="desloguear()" href="./login.html">Salir</a></li>
               </ul>
         </li>
-      </ul>
-    </div>`
+      </ul>`
     }
   }
 }

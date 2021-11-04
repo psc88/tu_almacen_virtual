@@ -20,6 +20,7 @@ let listaProductosMix = [];
 let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
+let productoExistente = false;
 let listaUsuarios = [];
 let usuarioActual = [];
 let listaEmpleados = [
@@ -42,13 +43,13 @@ let listaEmpleados = [
     "contraseña": "Epalermo132!"
   }
 ];
-let productoExistente = false;
 
 //** llamado de la funcion para carga inicial de la tabla **//
 cargaInicialTabla();
 
 //** Agregado de eventos blur (foco) **//
-codigoForm.addEventListener("blur", () => {validarCodigoProducto(codigoForm);
+codigoForm.addEventListener("blur", () => {
+  validarCodigoProducto(codigoForm);
 });
 nombreProducto.addEventListener("blur", () => {
   validarCampo(nombreProducto);
@@ -71,13 +72,13 @@ formulario.addEventListener("submit", guardarProducto);
 //** guardar producto en localstorage y crear tabla **//
 function guardarProducto(e) {
   e.preventDefault();
-  if(validarGeneralForm()){
-    if(productoExistente === false){
-    agregarProducto(); 
-  }else{
-    actualizarProductos(categoria.value)
+  if (validarGeneralForm()) {
+    if (productoExistente === false) {
+      agregarProducto();
+    } else {
+      actualizarProductos(categoria.value)
+    }
   }
-}
 }
 
 //** Agregado de producto segun la categoria **//
@@ -293,43 +294,44 @@ function cargaInicialTabla() {
 }
 
 
-function borrarFilasMix(){
+function borrarFilasMix() {
   let tabla = document.querySelector("#tablaMix");
   tabla.innerHTML = "";
 }
-function borrarFilasfrutas(){
+function borrarFilasfrutas() {
   let tabla = document.querySelector("#tablaFrutas");
   tabla.innerHTML = "";
 }
-function borrarFilasInflado(){
+function borrarFilasInflado() {
   let tabla = document.querySelector("#tablaInflados");
   tabla.innerHTML = "";
 }
-function borrarFilasEspecias(){
+function borrarFilasEspecias() {
   let tabla = document.querySelector("#tablaEspecias");
   tabla.innerHTML = "";
 }
 
 //** Funcion para eliminar producto
 window.eliminarProductoMix = (codigo) => {
-Swal.fire({
-  title: '¿Deseas eliminar este producto?',
-  text: "Si eliminas el producto no podras recuperarlo!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si, Eliminalo',
-  cancelButtonText: 'Cancelar'
-}).then((result) => {
-  if (result.isConfirmed) {
-     let productosFiltradoMix = listaProductosMix.filter((itemProductoMix) => {
-     return itemProductoMix.codigo != codigo});
-     listaProductosMix = productosFiltradoMix;
-     localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix));
-     borrarFilasMix();
-     listaProductosMix.forEach((itemProducto) => {
-     crearFilaProductosMix(itemProducto);
+  Swal.fire({
+    title: '¿Deseas eliminar este producto?',
+    text: "Si eliminas el producto no podras recuperarlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Eliminalo',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let productosFiltradoMix = listaProductosMix.filter((itemProductoMix) => {
+        return itemProductoMix.codigo != codigo
+      });
+      listaProductosMix = productosFiltradoMix;
+      localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix));
+      borrarFilasMix();
+      listaProductosMix.forEach((itemProducto) => {
+        crearFilaProductosMix(itemProducto);
       });
     }
     Swal.fire(
@@ -342,27 +344,28 @@ Swal.fire({
 
 
 window.eliminarProductoFrutas = (codigo) => {
-Swal.fire({
-  title: '¿Deseas eliminar este producto?',
-  text: "Si eliminas el producto no podras recuperarlo!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si, Eliminalo',
-  cancelButtonText: 'Cancelar'
-}).then((result) => {
-  if (result.isConfirmed) {
-    let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas) => {
-      return itemProductoFrutas.codigo != codigo});
-  listaProductosFrutas = productosFiltradoFrutas;
-  localStorage.setItem("listaProductosFrutas", JSON.stringify(listaProductosFrutas));
-  borrarFilasfrutas();
-  listaProductosFrutas.forEach((itemProducto) => {
-    crearFilaProductosFrutas(itemProducto);
-  });
-};
-    
+  Swal.fire({
+    title: '¿Deseas eliminar este producto?',
+    text: "Si eliminas el producto no podras recuperarlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Eliminalo',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let productosFiltradoFrutas = listaProductosFrutas.filter((itemProductoFrutas) => {
+        return itemProductoFrutas.codigo != codigo
+      });
+      listaProductosFrutas = productosFiltradoFrutas;
+      localStorage.setItem("listaProductosFrutas", JSON.stringify(listaProductosFrutas));
+      borrarFilasfrutas();
+      listaProductosFrutas.forEach((itemProducto) => {
+        crearFilaProductosFrutas(itemProducto);
+      });
+    };
+
     Swal.fire(
       'Eliminado!',
       'El producto fue correctamente eliminado',
@@ -373,31 +376,31 @@ Swal.fire({
 
 
 window.eliminarProductoInflado = (codigo) => {
-Swal.fire({
-  title: '¿Deseas eliminar este producto?',
-  text: "Si eliminas el producto no podras recuperarlo!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si, Eliminalo',
-  cancelButtonText: 'Cancelar'
-}).then((result) => {
-  if (result.isConfirmed) {
-    let productosFiltradoInflado = listaProductosInflados.filter((itemProductoInflado) => {
-      return itemProductoInflado.codigo != codigo
-    });
-  listaProductosInflados = productosFiltradoInflado;
-  localStorage.setItem(
-    "listaProductosInflados",
-    JSON.stringify(listaProductosInflados)
-  );
-  borrarFilasInflado();
-  listaProductosInflados.forEach((itemProducto) => {
-    crearFilaProductosInflado(itemProducto);
-  });
-};
-    
+  Swal.fire({
+    title: '¿Deseas eliminar este producto?',
+    text: "Si eliminas el producto no podras recuperarlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Eliminalo',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let productosFiltradoInflado = listaProductosInflados.filter((itemProductoInflado) => {
+        return itemProductoInflado.codigo != codigo
+      });
+      listaProductosInflados = productosFiltradoInflado;
+      localStorage.setItem(
+        "listaProductosInflados",
+        JSON.stringify(listaProductosInflados)
+      );
+      borrarFilasInflado();
+      listaProductosInflados.forEach((itemProducto) => {
+        crearFilaProductosInflado(itemProducto);
+      });
+    };
+
     Swal.fire(
       'Eliminado!',
       'El producto fue correctamente eliminado',
@@ -408,207 +411,195 @@ Swal.fire({
 
 
 window.eliminarProductoEspecias = (codigo) => {
-Swal.fire({
-  title: '¿Deseas eliminar este producto?',
-  text: "Si eliminas el producto no podras recuperarlo!",
-  icon: 'warning',
-  showCancelButton: true,
-  confirmButtonColor: '#3085d6',
-  cancelButtonColor: '#d33',
-  confirmButtonText: 'Si, Eliminalo',
-  cancelButtonText: 'Cancelar'
-}).then((result) => {
-  if (result.isConfirmed) {
-    let productosFiltradoEspecias = listaProductosEspecias.filter(
-      (itemProductoEspecias) => {
-        return itemProductoEspecias.codigo != codigo;
-      }
-    );
-    listaProductosEspecias = productosFiltradoEspecias;
-    localStorage.setItem(
-      "listaProductosEspecias",
-      JSON.stringify(listaProductosEspecias)
-    );
-    borrarFilasEspecias();
-    listaProductosEspecias.forEach((itemProducto) => {
-      crearFilaProductosEspecias(itemProducto);
-    });
-  };
+  Swal.fire({
+    title: '¿Deseas eliminar este producto?',
+    text: "Si eliminas el producto no podras recuperarlo!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Si, Eliminalo',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      let productosFiltradoEspecias = listaProductosEspecias.filter(
+        (itemProductoEspecias) => {
+          return itemProductoEspecias.codigo != codigo;
+        }
+      );
+      listaProductosEspecias = productosFiltradoEspecias;
+      localStorage.setItem(
+        "listaProductosEspecias",
+        JSON.stringify(listaProductosEspecias)
+      );
+      borrarFilasEspecias();
+      listaProductosEspecias.forEach((itemProducto) => {
+        crearFilaProductosEspecias(itemProducto);
+      });
+    };
 
     Swal.fire(
       'Eliminado!',
       'El producto fue correctamente eliminado',
       'success'
-      )
-    })
-  }
-
-
-
-// se prepara la edicion por categoria
-
-  window.prepararEdicion = (categoriaP,codigo)=>{
-    switch (categoriaP){
-      case 'mix':
-        let productoBuscado = listaProductosMix.find((itemProducto)=>{
-          return itemProducto.codigo == codigo
-          })
-          codigoForm.value = productoBuscado.codigo
-          cantidadForm.value = productoBuscado.cantidad
-          descripcionProducto.value = productoBuscado.descripcion
-          nombreProducto.value = productoBuscado.producto
-          urlForm.value = productoBuscado.url
-          categoria.value = productoBuscado.categoria
-          productoExistente = true;
-        break;
-      case 'frutas':
-        let productoBuscado2 = listaProductosFrutas.find((itemProducto)=>{
-          return itemProducto.codigo == codigo
-          })
-          codigoForm.value = productoBuscado2.codigo
-          cantidadForm.value = productoBuscado2.cantidad
-          descripcionProducto.value = productoBuscado2.descripcion
-          nombreProducto.value = productoBuscado2.producto
-          urlForm.value = productoBuscado2.url
-          categoria.value = productoBuscado2.categoria
-          productoExistente = true;
-        break;
-      case 'inflados':
-        let productoBuscado3 = listaProductosInflados.find((itemProducto)=>{
-          return itemProducto.codigo == codigo
-          })
-          codigoForm.value = productoBuscado3.codigo
-          cantidadForm.value = productoBuscado3.cantidad
-          descripcionProducto.value = productoBuscado3.descripcion
-          nombreProducto.value = productoBuscado3.producto
-          urlForm.value = productoBuscado3.url
-          categoria.value = productoBuscado3.categoria
-          productoExistente = true;
-        break;
-      case 'especias':
-        let productoBuscado4 = listaProductosEspecias.find((itemProducto)=>{
-          return itemProducto.codigo == codigo
-          })
-          codigoForm.value = productoBuscado4.codigo
-          cantidadForm.value = productoBuscado4.cantidad
-          descripcionProducto.value = productoBuscado4.descripcion
-          nombreProducto.value = productoBuscado4.producto
-          urlForm.value = productoBuscado4.url
-          categoria.value = productoBuscado4.categoria
-          productoExistente = true;
-        break;
-    }
-  }
-  
-function actualizarProductos(categoria){
-  switch(categoria){
-    case 'mix':
-      let posicion = listaProductosMix.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  // modificar los datos de esa posision
-  listaProductosMix[posicion].producto = nombreProducto.value
-  listaProductosMix[posicion].cantidad = cantidadForm.value
-  listaProductosMix[posicion].descripcion = descripcionProducto.value
-  listaProductosMix[posicion].url = urlForm.value
-  // actualizar LS
-  localStorage.setItem("listaProductosMix",JSON.stringify(listaProductosMix))
-  // volver a dibuajar tabla
-  borrarTablaMix()
-  listaProductosMix.forEach((itemProducto)=>{crearFilaProductosMix(itemProducto)})
-  limpiarFormulario()
-  Swal.fire(
-    'Producto Modificado!',
-    'El producto fue correctamente modificado!',
-    'success'
-  )
-    break;
-    case 'frutas':
-      let posicion2 = listaProductosFrutas.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  // modificar los datos de esa posision
-  listaProductosFrutas[posicion2].producto = nombreProducto.value
-  listaProductosFrutas[posicion2].cantidad = cantidadForm.value
-  listaProductosFrutas[posicion2].descripcion = descripcionProducto.value
-  listaProductosFrutas[posicion2].url = urlForm.value
-  // actualizar LS
-  localStorage.setItem("listaProductosFrutas",JSON.stringify(listaProductosFrutas))
-  // volver a dibuajar tabla
-  borrarTablaFrutas()
-  listaProductosFrutas.forEach((itemProducto)=>{crearFilaProductosFrutas(itemProducto)})
-  limpiarFormulario()
-  Swal.fire(
-    'Producto Modificado!',
-    'El producto fue correctamente modificado!',
-    'success'
-  )
-    break;
-    case 'inflados':
-      let posicion3 = listaProductosInflados.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-
-  // modificar los datos de esa posision
-  listaProductosInflados[posicion3].producto = nombreProducto.value
-  listaProductosInflados[posicion3].cantidad = cantidadForm.value
-  listaProductosInflados[posicion3].descripcion = descripcionProducto.value
-  listaProductosInflados[posicion3].url = urlForm.value
-  // actualizar LS
-  localStorage.setItem("listaProductosInflados",JSON.stringify(listaProductosInflados))
-  // volver a dibuajar tabla
-  borrarTablaInflados()
-  listaProductosInflados.forEach((itemProducto)=>{crearFilaProductosEspecias(itemProducto)})
-  limpiarFormulario()
-  
-  Swal.fire(
-    'Producto Modificado!',
-    'El producto fue correctamente modificado!',
-    'success'
-  )
-    break;
-    case 'especias':
-      let posicion4 = listaProductosEspecias.findIndex((itemproducto)=>{return itemproducto.codigo == codigoForm.value})
-  // modificar los datos de esa posision
-  listaProductosEspecias[posicion4].producto = nombreProducto.value
-  listaProductosEspecias[posicion4].cantidad = cantidadForm.value
-  listaProductosEspecias[posicion4].descripcion = descripcionProducto.value
-  listaProductosEspecias[posicion4].url = urlForm.value
-  // actualizar LS
-  localStorage.setItem("listaProductosEspecias",JSON.stringify(listaProductosEspecias))
-  // volver a dibuajar tabla
-  borrarTablaEspecias()
-  listaProductosEspecias.forEach((itemProducto) => {
-    crearFilaProductosEspecias(itemProducto);
-  });
-  Swal.fire(
-    'Producto Modificado!',
-    'El producto fue correctamente modificado!',
-    'success'
-  )
-    break;
-  }
-  
+    )
+  })
 }
 
-function borrarTablaMix(){
+
+
+
+// Edicion por categoria de productos
+
+window.prepararEdicion = (categoriaP, codigo) => {
+  switch (categoriaP) {
+    case 'mix':
+      let productoBuscado = listaProductosMix.find((itemProducto) => {
+        return itemProducto.codigo == codigo
+      })
+      codigoForm.value = productoBuscado.codigo
+      cantidadForm.value = productoBuscado.cantidad
+      descripcionProducto.value = productoBuscado.descripcion
+      nombreProducto.value = productoBuscado.producto
+      urlForm.value = productoBuscado.url
+      categoria.value = productoBuscado.categoria
+      productoExistente = true;
+      break;
+    case 'frutas':
+      let productoBuscado2 = listaProductosFrutas.find((itemProducto) => {
+        return itemProducto.codigo == codigo
+      })
+      codigoForm.value = productoBuscado2.codigo
+      cantidadForm.value = productoBuscado2.cantidad
+      descripcionProducto.value = productoBuscado2.descripcion
+      nombreProducto.value = productoBuscado2.producto
+      urlForm.value = productoBuscado2.url
+      categoria.value = productoBuscado2.categoria
+      productoExistente = true;
+      break;
+    case 'inflados':
+      let productoBuscado3 = listaProductosInflados.find((itemProducto) => {
+        return itemProducto.codigo == codigo
+      })
+      codigoForm.value = productoBuscado3.codigo
+      cantidadForm.value = productoBuscado3.cantidad
+      descripcionProducto.value = productoBuscado3.descripcion
+      nombreProducto.value = productoBuscado3.producto
+      urlForm.value = productoBuscado3.url
+      categoria.value = productoBuscado3.categoria
+      productoExistente = true;
+      break;
+    case 'especias':
+      let productoBuscado4 = listaProductosEspecias.find((itemProducto) => {
+        return itemProducto.codigo == codigo
+      })
+      codigoForm.value = productoBuscado4.codigo
+      cantidadForm.value = productoBuscado4.cantidad
+      descripcionProducto.value = productoBuscado4.descripcion
+      nombreProducto.value = productoBuscado4.producto
+      urlForm.value = productoBuscado4.url
+      categoria.value = productoBuscado4.categoria
+      productoExistente = true;
+      break;
+  }
+}
+
+function actualizarProductos(categoria) {
+  switch (categoria) {
+    case 'mix':
+      let posicion = listaProductosMix.findIndex((itemproducto) => { return itemproducto.codigo == codigoForm.value })
+      listaProductosMix[posicion].producto = nombreProducto.value
+      listaProductosMix[posicion].cantidad = cantidadForm.value
+      listaProductosMix[posicion].descripcion = descripcionProducto.value
+      listaProductosMix[posicion].url = urlForm.value
+      localStorage.setItem("listaProductosMix", JSON.stringify(listaProductosMix))
+      borrarTablaMix()
+      listaProductosMix.forEach((itemProducto) => { crearFilaProductosMix(itemProducto) })
+      limpiarFormulario()
+      Swal.fire(
+        'Producto Modificado!',
+        'El producto fue correctamente modificado!',
+        'success'
+      )
+      break;
+    case 'frutas':
+      let posicion2 = listaProductosFrutas.findIndex((itemproducto) => { return itemproducto.codigo == codigoForm.value })
+      listaProductosFrutas[posicion2].producto = nombreProducto.value
+      listaProductosFrutas[posicion2].cantidad = cantidadForm.value
+      listaProductosFrutas[posicion2].descripcion = descripcionProducto.value
+      listaProductosFrutas[posicion2].url = urlForm.value
+      localStorage.setItem("listaProductosFrutas", JSON.stringify(listaProductosFrutas))
+      borrarTablaFrutas()
+      listaProductosFrutas.forEach((itemProducto) => { crearFilaProductosFrutas(itemProducto) })
+      limpiarFormulario()
+      Swal.fire(
+        'Producto Modificado!',
+        'El producto fue correctamente modificado!',
+        'success'
+      )
+      break;
+    case 'inflados':
+      let posicion3 = listaProductosInflados.findIndex((itemproducto) => { return itemproducto.codigo == codigoForm.value })
+
+      listaProductosInflados[posicion3].producto = nombreProducto.value
+      listaProductosInflados[posicion3].cantidad = cantidadForm.value
+      listaProductosInflados[posicion3].descripcion = descripcionProducto.value
+      listaProductosInflados[posicion3].url = urlForm.value
+      localStorage.setItem("listaProductosInflados", JSON.stringify(listaProductosInflados))
+      borrarTablaInflados()
+      listaProductosInflados.forEach((itemProducto) => { crearFilaProductosEspecias(itemProducto) })
+      limpiarFormulario()
+
+      Swal.fire(
+        'Producto Modificado!',
+        'El producto fue correctamente modificado!',
+        'success'
+      )
+      break;
+    case 'especias':
+      let posicion4 = listaProductosEspecias.findIndex((itemproducto) => { return itemproducto.codigo == codigoForm.value })
+      listaProductosEspecias[posicion4].producto = nombreProducto.value
+      listaProductosEspecias[posicion4].cantidad = cantidadForm.value
+      listaProductosEspecias[posicion4].descripcion = descripcionProducto.value
+      listaProductosEspecias[posicion4].url = urlForm.value
+      localStorage.setItem("listaProductosEspecias", JSON.stringify(listaProductosEspecias))
+      borrarTablaEspecias()
+      listaProductosEspecias.forEach((itemProducto) => {
+        crearFilaProductosEspecias(itemProducto);
+      });
+      Swal.fire(
+        'Producto Modificado!',
+        'El producto fue correctamente modificado!',
+        'success'
+      )
+      break;
+  }
+
+}
+
+function borrarTablaMix() {
   let tabla = document.querySelector("#tablaMix");
   tabla.innerHTML = ""
 }
-function borrarTablaFrutas(){
+function borrarTablaFrutas() {
   let tabla = document.querySelector("#tablaFrutas");
   tabla.innerHTML = ""
 }
-function borrarTablaInflados(){
+function borrarTablaInflados() {
   let tabla = document.querySelector("#tablaInflados");
   tabla.innerHTML = ""
 }
-function borrarTablaEspecias(){
+function borrarTablaEspecias() {
   let tabla = document.querySelector("#tablaEspecias");
   tabla.innerHTML = ""
 }
 
-/* Fc para borrar la Tabla de Usuarios*/
-function borrarTablaUsuarios(){
+function borrarTablaUsuarios() {
   let tabla = document.querySelector("#tablaUsuario");
   tabla.innerHTML = ""
 }
 
-/* Fc para eliminar el Usuario  */
+/* Funcion para eliminar el Usuario  */
 window.eliminarUsuario = (codigo) => {
   Swal.fire({
     title: '¿Deseas eliminar este Usuario?',
@@ -621,31 +612,24 @@ window.eliminarUsuario = (codigo) => {
     cancelButtonText: 'Cancelar'
   }).then((result) => {
     if (result.isConfirmed) {
-      let usuarioFiltrado = listaUsuarios.filter((listaUsuarios ) => {
+      let usuarioFiltrado = listaUsuarios.filter((listaUsuarios) => {
         return listaUsuarios.correo != codigo;
-        });
-       listaUsuarios = usuarioFiltrado;
+      });
+      listaUsuarios = usuarioFiltrado;
       localStorage.setItem("listaUsuarios", JSON.stringify(listaUsuarios));
       borrarTablaUsuarios()
       listaUsuarios.forEach((itemUsuario) => {
-      crearFilaUsuarios(itemUsuario);
-       });
-         }
-  
-      Swal.fire(
-        'Eliminado!',
-        'El usuario fue Eliminado',
-        'success'
-        )
-      })
+        crearFilaUsuarios(itemUsuario);
+      });
     }
 
-
-
-
-
-
-  
+    Swal.fire(
+      'Eliminado!',
+      'El usuario fue Eliminado',
+      'success'
+    )
+  })
+}
 
 /* Boton para limpiar el formulario*/
 btnlimpiarFormulario.addEventListener("click", limpiarFormulario);
