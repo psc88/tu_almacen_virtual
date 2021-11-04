@@ -165,8 +165,7 @@ function limpiarFormulario() {
 
 //** Funcion para crear la fila en la tabla **//
 function crearFilaProductosMix(itemProducto) {
-  let tabla = document.querySelector("#tablaMix");
-
+  let tabla = document.querySelector("#tablaMix")
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
@@ -178,11 +177,10 @@ function crearFilaProductosMix(itemProducto) {
       <button class="btn btn-warning mt-2" onclick="eliminarProductoMix('${itemProducto.codigo}')">Borrar</button>
 
     </td>
-  </tr>`;
+  </tr>`
 }
 function crearFilaProductosFrutas(itemProducto) {
   let tabla = document.querySelector("#tablaFrutas");
-
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
@@ -197,7 +195,6 @@ function crearFilaProductosFrutas(itemProducto) {
 }
 function crearFilaProductosInflado(itemProducto) {
   let tabla = document.querySelector("#tablaInflados");
-
   tabla.innerHTML += `<tr>
     <th scope="row">${itemProducto.codigo}</th>
     <td>${itemProducto.producto}</td>
