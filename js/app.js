@@ -1,8 +1,10 @@
+import { Producto } from "./clasesProductos.js";
 //** array de los productos */
 let listaProductosMix = [];
 let listaProductosFrutas = [];
 let listaProductosInflados = [];
 let listaProductosEspecias = [];
+let listaProductosFavorito = [];
 
 //** Carga inicial de los productos a la web */
 cargaInicial();
@@ -61,7 +63,7 @@ function crearColumnaMix(producto){
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -92,7 +94,7 @@ function crearColumnaFrutas(producto){
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -123,7 +125,7 @@ function crearColumnaInflados(producto){
           <span class="badge bg-success">Articulo:</span>${producto.codigo}<br />
           <span class="fw-bold"> Descripción: </span> ${producto.descripcion}
         </p>
-        <p class="card-text"></p>
+        <button class="btn btn-warning" onclick="convertirFavorito('${producto.categoria}','${producto.codigo}')"><i class="far fa-heart"></i></button>
       </div>
     </div>
   </article>`;
@@ -136,7 +138,85 @@ function crearColumnaEspecias(producto){
     <td>${producto.descripcion}</td>
     <td>${producto.cantidad}</td>
     <td class="text-center">
-      <button class="btn btn-warning" onclick="prepararEdicion()"><i class="far fa-heart"></i></button>
+      <button class="btn btn-warning"><a href="error.html"><i class="far fa-heart"></i></a></button>
     </td>
   </tr>`;
 }
+    let codigoFavorito = [];
+    let cantidadFavorito = [];
+    let descripcionFavorito = [];
+    let productoFavorito = [];
+    let urlFavorito = [];
+    let categoriaFavorito = [];
+
+  window.convertirFavorito = (categoriaProductoFavorito,codigo)=>{
+    switch (categoriaProductoFavorito){
+      case 'mix':
+        let productoBuscado = listaProductosMix.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoFavorito= productoBuscado.codigo
+          cantidadFavorito = productoBuscado.cantidad
+          descripcionFavorito = productoBuscado.descripcion
+          productoFavorito = productoBuscado.producto
+          urlFavorito = productoBuscado.url
+          categoriaFavorito = productoBuscado.categoria
+          agregarProducto()
+        break;
+      case 'frutas':
+        console.log("buscandoproducto")
+        let productoBuscado2 = listaProductosFrutas.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoFavorito= productoBuscado2.codigo
+          cantidadFavorito = productoBuscado2.cantidad
+          descripcionFavorito = productoBuscado2.descripcion
+          productoFavorito = productoBuscado2.producto
+          urlFavorito = productoBuscado2.url
+          categoriaFavorito = productoBuscado2.categoria
+          agregarProducto();
+        break;
+      case 'inflados':
+        console.log("buscandoproducto")
+        let productoBuscado3 = listaProductosInflados.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoFavorito= productoBuscado3.codigo
+          cantidadFavorito = productoBuscado3.cantidad
+          descripcionFavorito = productoBuscado3.descripcion
+          productoFavorito = productoBuscado3.producto
+          urlFavorito = productoBuscado3.url
+          categoriaFavorito = productoBuscado3.categoria
+          agregarProducto();
+        break;
+      case 'especias':
+        console.log("buscandoproducto")
+        let productoBuscado4 = listaProductosEspecias.find((itemProducto)=>{
+          return itemProducto.codigo == codigo
+          })
+          codigoFavorito= productoBuscado4.codigo
+          cantidadFavorito = productoBuscado4.cantidad
+          descripcionFavorito = productoBuscado4.descripcion
+          productoFavorito = productoBuscado4.producto
+          urlFavorito = productoBuscado4.url
+          categoriaFavorito = productoBuscado4.categoria
+          agregarProducto();
+        break;
+    }
+  }
+  
+  function agregarProducto() {
+    let productoNuevoFavorito = new Producto(
+      codigoFavorito,
+      productoFavorito,
+      descripcionFavorito,
+      cantidadFavorito,
+      urlFavorito,
+      categoriaFavorito
+    );
+        listaProductosFavorito.push(productoNuevoFavorito);
+        localStorage.setItem(
+          "listaProductosFavoritos",
+          JSON.stringify(listaProductosFavorito)
+        );
+      }
