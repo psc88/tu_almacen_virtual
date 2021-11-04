@@ -25,10 +25,10 @@
   <body class="bgSeccionProductos">
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bgIndex">
-        <div class="container-fluid">
+        <div class="container">
           <a class="navbar-brand" href="index.html">
             <img
-              src="/img/logo tu almacen.svg"
+              src="/img/canastoo.svg"
               alt="logo tu almacen virtual"
               class="wLogo my-3"
             />
@@ -45,22 +45,17 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarTuAlmacen">
-            <ul class="navbar-nav ms-5 ps-5 mt-4 fontNav">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0" id="paraUsuarios">
               <li class="nav-item">
                 <a
-                  class="nav-link text-white ms-3"
+                  class="nav-link active text-white ms-3"
                   aria-current="page"
-                  href="index.html"
+                  href="./index.html"
                   >Inicio</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-white ms-3" href="admin.html"
-                  >Admin</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link text-white ms-3" href="nosotros.html"
+                <a class="nav-link text-white ms-3" href="./nosotros.html"
                   >Acerca de nosotros</a
                 >
               </li>
@@ -107,65 +102,75 @@
         </section>
       </section>
     </main>
-    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
-      <section class="container mt-3">
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-4 col-footer mb-4">
-            <div>
-              <a href="index.html">
-                <img
-                  src="/img/logo footer.svg"
-                  alt="logo tu almacen virtual "
-                  class="w-25 logo-footer"
-                />
-              </a>
+    <footer class="text-white fontNav textoCentrado bgfooter">
+      <section class="bgFooter2 h-100 pb-1 pt-3">
+        <section class="container mt-3">
+          <article class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-footer mb-4">
+              <div>
+                <a href="index.html">
+                  <img
+                    src="/img/logo footer.svg"
+                    alt="logo tu almacen virtual "
+                    class="w-25 logo-footer"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-            <h5>Navegacion</h5>
-            <div>
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Acerca de nosotros</a>
-                </li>
-              </ul>
+            <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
+              <h5>Navegacion</h5>
+              <div>
+                <ul class="navbar-nav mb-2">
+                  <ul class="navbar-nav mb-2">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="index.html"
+                        >Inicio</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Contactanos</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Opiniones</a
+                      >
+                    </li>
+                  </ul>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-            <h5>Seguinos en nuestras redes:</h5>
-            <div class="col-sm-12 col-md-10 text-center">
-              <a
-                href="./error.html"
-                target="_blank"
-                class="text-decoration-none"
-              >
-                <i class="fab fa-instagram-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-facebook-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-twitter-square text-white fa-2x"></i>
-              </a>
+            <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
+              <h5>Seguinos en nuestras redes:</h5>
+              <div class="col-sm-12 col-md-10 text-center">
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="fab fa-instagram-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-facebook-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-twitter-square text-white fa-2x"></i>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </section>
+        <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
       </section>
-      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
     </footer>
     <script src="js/favorito.js"></script>
     <script src="js/bootstrap.min.js"></script>

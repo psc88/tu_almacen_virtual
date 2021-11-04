@@ -38,8 +38,6 @@ function validarUsuario(e) {
         if (productoExistente === false) {
             cargarUsuarioActual();
             crearUsuario();
-        } else {
-            console.log("no se hace nada");
         }
     }
 }

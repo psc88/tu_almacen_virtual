@@ -9,7 +9,7 @@ export function validarCampo(input) {
 }
 
 export function validarCodigoProducto(input) {
-if (input.value.trim() != "" && input.value.trim().length >= 3) {
+  if (input.value.trim() != "" && input.value.trim().length >= 3) {
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -40,13 +40,13 @@ export function validarURL(input) {
   }
 }
 
-export function validarCategoria(input){
+export function validarCategoria(input) {
   let patron = /^[m][i][x]$/;
   let patron1 = /^[f][r][u][t][a][s]$/;
   let patron2 = /^[i][n][f][l][a][d][o][s]$/;
   let patron3 = /^[e][s][p][e][c][i][a][s]$/;
-  if (input.value.trim().length > 0 && patron.test(input.value.trim()) || patron1.test(input.value.trim()) || patron2.test(input.value.trim()) || patron3.test(input.value.trim())){
-    if(categoria.value === "especias"){
+  if (input.value.trim().length > 0 && patron.test(input.value.trim()) || patron1.test(input.value.trim()) || patron2.test(input.value.trim()) || patron3.test(input.value.trim())) {
+    if (categoria.value === "especias") {
       urlForm.setAttribute("disabled", "")
     } else {
       urlForm.removeAttribute("disabled")
@@ -59,7 +59,7 @@ export function validarCategoria(input){
   }
 }
 
-export function validarPass(input){
+export function validarPass(input) {
   let patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
   if (patron.test(input.value)) {
     input.className = "form-control w-50 is-valid";
@@ -70,7 +70,7 @@ export function validarPass(input){
   }
 }
 
-export function validarPassCrear(input){
+export function validarPassCrear(input) {
   let patron = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/;
   if (patron.test(input.value)) {
     input.className = "form-control is-valid";
@@ -81,9 +81,9 @@ export function validarPassCrear(input){
   }
 }
 
-export function validarMail(input){
+export function validarMail(input) {
   let patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  if(patron.test(input.value)){
+  if (patron.test(input.value)) {
     input.className = "form-control w-50 is-valid";
     return true;
   } else {
@@ -92,9 +92,9 @@ export function validarMail(input){
   }
 }
 
-export function validarMailCrear(input){
+export function validarMailCrear(input) {
   let patron = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-  if(patron.test(input.value)){
+  if (patron.test(input.value)) {
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -103,10 +103,9 @@ export function validarMailCrear(input){
   }
 }
 
-export function validarNombre(input){
-  let patron = /^[a-z]{1,20}$/;
-  let patron1 = /^[A-Z]{1,20}$/;
-  if(patron.test(input.value) || patron1.test(input.value)){
+export function validarNombre(input) {
+  let patron = /^[A-Z]{1,20}$/;
+  if (patron.test(input.value.toUpperCase())) {
     input.className = "form-control is-valid";
     return true;
   } else {
@@ -117,7 +116,7 @@ export function validarNombre(input){
 
 export function validarGeneralForm() {
   let alerta = document.querySelector("#mensajeAlerta");
-  if(categoria.value === "especias"){
+  if (categoria.value === "especias") {
     if (
       validarCodigoProducto(codigoForm) &&
       validarCampo(nombreProducto) &&
@@ -149,7 +148,7 @@ export function validarGeneralForm() {
   }
 }
 
-export function validarGeneralLogin(){
+export function validarGeneralLogin() {
   let alerta = document.querySelector("#mensajeAlertaLogin");
   if (
     validarMail(emailUsuario) &&
@@ -163,7 +162,7 @@ export function validarGeneralLogin(){
   }
 }
 
-export function validarGeneralCrearUsuario(){
+export function validarGeneralCrearUsuario() {
   let alerta = document.querySelector("#mensajeAlertaCrearUsuario");
   if (
     validarMailCrear(email) &&
@@ -179,6 +178,7 @@ export function validarGeneralCrearUsuario(){
   }
 }
 
+// Traemos valores para validar cada campo.
 let codigoForm = document.querySelector("#codigoId");
 let cantidadForm = document.querySelector("#cantidadProducto");
 let nombreProducto = document.querySelector("#nombreProducto");

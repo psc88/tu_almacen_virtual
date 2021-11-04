@@ -22,6 +22,7 @@
       src="https://kit.fontawesome.com/95fb69c1a8.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>Tu Almacen Virtual</title>
   </head>
   <body>
@@ -30,7 +31,7 @@
         <div class="container">
           <a class="navbar-brand" href="#">
             <img
-              src="/img/logo tu almacen.svg"
+              src="/img/canastoo.svg"
               alt="logo tu almacen virtual"
               class="wLogo my-3"
             />
@@ -69,91 +70,99 @@
         </div>
       </nav>
     </header>
-    <main>
-      <section class="fondoLoginCreate">
+    <main class="bgBody">
+      <section class="bgError text-white">
         <article class="verde py-5 text-center">
           <h1 id="error">Error 404</h1>
           <p class="fs-2">!!Sitio web no encontrado!!</p>
-          <a href="./index.html" class="btn btn-success fs-5"
-            >Pagina Principal</a
-          >
+          <a href="./index.html" class="btn btn-success fs-2">
+            <strong class="colorFuente">Pagina Principal </strong>
+          </a>
           <p class="fs-2 mt-5">Presiona para continuar o juega un juego</p>
         </article>
         <article class="text-center">
           <article>
-            <h1 class="text-white juego">Juego del ahorcado</h1>
-            <p class="text-white juego">Intruduzca una letra, por favor</p>
+            <h1 class="text-dark juego">Juego del ahorcado</h1>
+            <p class="text-dark juego">Intruduzca una letra, por favor</p>
           </article>
           <article id="continuar">
-            <input type="text" maxlength="1" id="letra" />
-            <button id="calcular" class="juego">Probar</button>
-            <p class="text-white juego" id="output"></p>
+            <input type="text" maxlength="1" id="letra" class="fs-5 fw-bold" />
+            <button id="calcular" class="btm btn-success juego">Probar</button>
+            <p class="text-dark juego fs-3 fw-bold" id="output"></p>
             <div id="ahorcado" class="rounded mx-auto d-block"></div>
           </article>
         </article>
       </section>
     </main>
-    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
-      <section class="container mt-3">
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-4 col-footer mb-4">
-            <div>
-              <a href="index.html">
-                <img
-                  src="/img/logo footer.svg"
-                  alt="logo tu almacen virtual "
-                  class="w-25 logo-footer"
-                />
-              </a>
+    <footer class="text-white fontNav textoCentrado bgfooter">
+      <section class="bgFooter2 h-100 pb-1 pt-3">
+        <section class="container mt-3">
+          <article class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-footer mb-4">
+              <div>
+                <a href="index.html">
+                  <img
+                    src="/img/logo footer.svg"
+                    alt="logo tu almacen virtual "
+                    class="w-25 logo-footer"
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-            <h5>Navegacion</h5>
-            <div>
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="nosotros.html"
-                    >Acerca de nosotros</a
-                  >
-                </li>
-              </ul>
+            <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
+              <h5>Navegacion</h5>
+              <div>
+                <ul class="navbar-nav mb-2">
+                  <ul class="navbar-nav mb-2">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="index.html"
+                        >Inicio</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Contactanos</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Opiniones</a
+                      >
+                    </li>
+                  </ul>
+                </ul>
+              </div>
             </div>
-          </div>
-          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-            <h5>Seguinos en nuestras redes:</h5>
-            <div class="col-sm-12 col-md-10 text-center">
-              <a
-                href="./error.html"
-                target="_blank"
-                class="text-decoration-none"
-              >
-                <i class="fab fa-instagram-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-facebook-square text-white fa-2x"></i>
-              </a>
-              <a
-                href="./error.html"
-                target="_blank"
-                class="ms-2 text-decoration-none"
-              >
-                <i class="fab fa-twitter-square text-white fa-2x"></i>
-              </a>
+            <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
+              <h5>Seguinos en nuestras redes:</h5>
+              <div class="col-sm-12 col-md-10 text-center">
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="fab fa-instagram-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-facebook-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-twitter-square text-white fa-2x"></i>
+                </a>
+              </div>
             </div>
-          </div>
-        </article>
+          </article>
+        </section>
+        <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
       </section>
-      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
     </footer>
     <script src="./js/error.js"></script>
     <script src="./js/bootstrap.min.js"></script>

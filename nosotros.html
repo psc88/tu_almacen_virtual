@@ -1,24 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Enrico Palermo, Pablo Sebastian Castillo, Carlos Carral, Liliana Cerda">
-    <meta name="Description" content="Pagina Acerca de Nosotros, informacion sobre los creadres del sitio y su fin">
-    <meta name="keywords" content="mercado, productos, venta, comida, nosotros, autores">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://kit.fontawesome.com/95fb69c1a8.js" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="author"
+      content="Enrico Palermo, Pablo Sebastian Castillo, Carlos Carral, Liliana Cerda"
+    />
+    <meta
+      name="Description"
+      content="Pagina Acerca de Nosotros, informacion sobre los creadres del sitio y su fin"
+    />
+    <meta
+      name="keywords"
+      content="mercado, productos, venta, comida, nosotros, autores"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <script
+      src="https://kit.fontawesome.com/95fb69c1a8.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Tu Almacen Virtual</title>
-
-</head>
-<body>
+  </head>
+  <body>
     <header>
       <nav class="navbar navbar-expand-lg navbar-dark bgIndex">
         <div class="container">
           <a class="navbar-brand" href="#">
-            <img src="/img/logo tu almacen.svg" alt="logo tu almacen virtual" class="wLogo my-3" />
+            <img
+              src="/img/canastoo.svg"
+              alt="logo tu almacen virtual"
+              class="wLogo my-3"
+            />
           </a>
           <button
             class="navbar-toggler"
@@ -42,9 +57,6 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link text-white ms-3" href="admin.html">Admin</a>
-              </li>
-              <li class="nav-item">
                 <a class="nav-link text-white ms-3" href="nosotros.html"
                   >Acerca de nosotros</a
                 >
@@ -54,94 +66,136 @@
         </div>
       </nav>
     </header>
-    <main>
-        <section class="container text-center">
-            <article class="mt-3 ">
-                <h1 class="display-2">SOBRE NOSOTROS</h3>
-            </article>
-            <article class="row my-3">
-                <div>
-                    <h2>Aca va la frase que identifica al equipo</h2>
-                </div>
-            </article>
-            <article class="grupo row mb-5">
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="img/nosotros/carlos.jpg" alt="Carlos Carral" class="rounded-circle w-75 mt-5">
-                    <h3 class="mt-2">Carlos Carral</h3>
-                    <p>Web Developer & Styler</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12 ">
-                    <img src="img/nosotros/lili.jpg" alt="Liliana Cerda" class="rounded-circle w-75 mt-5">
-                    <h3 class="mt-2">Liliana Cerda</h3>
-                    <p>Web Developer & Styler</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="img/nosotros/pablo.jpg" alt="Pablo Sebastian Castillo" class="rounded-circle w-75 mt-5">
-                    <h3 class="mt-2">Pablo Sebastian Castillo</h3>
-                    <p>Web Developer & Styler</p>
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-12">
-                    <img src="img/nosotros/enrico.jpg" alt="Enrico Palermo" class="rounded-circle w-75 mt-5">
-                    <h3 class="mt-2">Enrico Palermo</h3>
-                    <p>Web Developer & Styler</p>
-                </div>
-            </article>
-            <article class="row" id="mapa">
-              <div>
-                <h2>Donde estamos</h2>
-              </div>
-              <iframe  class="my-3 col-lg-12"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.368465173808!2d-65.2066986042348!3d-26.836349057009752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0e8ca3262f%3A0x309f7b100d294559!2sEdificio%20576%20Concepto!5e0!3m2!1sen!2sar!4v1635446333105!5m2!1sen!2sar" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </article>
-        </section>
-    </main>
-    <footer class="bgIndex text-white py-3 fontNav textoCentrado">
-      <section class="container mt-3">
-        <article class="row justify-content-center">
-          <div class="col-sm-12 col-md-4 col-footer mb-4">
-            <div>
-              <a href="index.html">
-                <img
-                  src="/img/logo footer.svg"
-                  alt="logo tu almacen virtual "
-                  class="w-25 logo-footer"
-                />
-              </a>
-            </div>
+    <main class="bgBody">
+      <section class="container text-center">
+        <article class="pt-5 d-flex justify-content-center">
+          <h2 class="display-3 fontNav w-75">SOBRE NOSOTROS</h2>
+        </article>
+
+        <article class="grupo row mb-5 fontNav">
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img
+              src="img/nosotros/carlos.jpg"
+              alt="Carlos Carral"
+              class="rounded-circle border border-4 w-75 mt-5"
+            />
+            <h3 class="mt-2">Carlos Joaquín Carral</h3>
+            <p>Web Developer & Styler</p>
           </div>
-          <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
-            <h5>Navegacion</h5>
-            <div>
-              <ul class="navbar-nav mb-2">
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="/index.html">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="">Admin</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="nosotros.html">Acerca de nosotros</a>
-                </li>
-              </ul>
-            </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img
+              src="img/nosotros/lili.jpg"
+              alt="Liliana Cerda"
+              class="rounded-circle border border-4 w-75 mt-5"
+            />
+            <h3 class="mt-2">Liliana Cerda</h3>
+            <p>Web Developer & Styler</p>
           </div>
-          <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
-            <h5>Seguinos en nuestras redes:</h5>
-            <div class="col-sm-12 col-md-10 text-center">
-              <a href="./error.html" target="_blank" class="text-decoration-none">
-                <i class="fab fa-instagram-square text-white fa-2x"></i>
-              </a>
-              <a href="./error.html" target="_blank" class="ms-2 text-decoration-none">
-                <i class="fab fa-facebook-square text-white fa-2x"></i>
-              </a>
-              <a href="./error.html" target="_blank" class="ms-2 text-decoration-none">
-                <i class="fab fa-twitter-square text-white fa-2x"></i>
-              </a>
-            </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img
+              src="img/nosotros/pablo.jpg"
+              alt="Pablo Sebastian Castillo"
+              class="rounded-circle border border-4 w-75 mt-5"
+            />
+            <h3 class="mt-2">Pablo Sebastian Castillo</h3>
+            <p>Web Developer & Styler</p>
+          </div>
+          <div class="col-lg-3 col-md-6 col-sm-12">
+            <img
+              src="img/nosotros/enrico.jpg"
+              alt="Enrico Palermo"
+              class="rounded-circle border border-4 w-75 mt-5"
+            />
+            <h3 class="mt-2">Enrico Palermo</h3>
+            <p>Web Developer & Styler</p>
           </div>
         </article>
+        <article class="row d-flex justify-content-center fontNav" id="mapa">
+          <div class="d-flex justify-content-center">
+            <h2 class="w-50">DONDE ESTAMOS</h2>
+          </div>
+          <iframe
+            class="my-3 col-lg-12 w-75 border border-3"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d428.368465173808!2d-65.2066986042348!3d-26.836349057009752!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94225c0e8ca3262f%3A0x309f7b100d294559!2sEdificio%20576%20Concepto!5e0!3m2!1sen!2sar!4v1635446333105!5m2!1sen!2sar"
+            width="600"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          ></iframe>
+        </article>
       </section>
-      <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
+    </main>
+    <footer class="text-white fontNav textoCentrado bgfooter">
+      <section class="bgFooter2 h-100 pb-1 pt-3">
+        <section class="container mt-3">
+          <article class="row justify-content-center">
+            <div class="col-sm-12 col-md-4 col-footer mb-4">
+              <div>
+                <a href="index.html">
+                  <img
+                    src="/img/logo footer.svg"
+                    alt="logo tu almacen virtual "
+                    class="w-25 logo-footer"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4 my-1 col-footer mb-4">
+              <h5>Navegacion</h5>
+              <div>
+                <ul class="navbar-nav mb-2">
+                  <ul class="navbar-nav mb-2">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="index.html"
+                        >Inicio</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Contactanos</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Opiniones</a
+                      >
+                    </li>
+                  </ul>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-12 col-md-4 my-1 mb-4 text-center">
+              <h5>Seguinos en nuestras redes:</h5>
+              <div class="col-sm-12 col-md-10 text-center">
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="text-decoration-none"
+                >
+                  <i class="fab fa-instagram-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-facebook-square text-white fa-2x"></i>
+                </a>
+                <a
+                  href="./error.html"
+                  target="_blank"
+                  class="ms-2 text-decoration-none"
+                >
+                  <i class="fab fa-twitter-square text-white fa-2x"></i>
+                </a>
+              </div>
+            </div>
+          </article>
+        </section>
+        <p class="text-center pt-3">&copy;Todos los derechos reservados.</p>
+      </section>
     </footer>
-<script src="js/bootstrap.min.js"></script>
-</body>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>

@@ -21,6 +21,7 @@
       src="https://kit.fontawesome.com/012f3cd5dc.js"
       crossorigin="anonymous"
     ></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body class="bgSeccionProductos">
     <header>
@@ -28,7 +29,7 @@
         <div class="container">
           <a class="navbar-brand" href="../index.html">
             <img
-              src="/img/logo tu almacen.svg"
+              src="/img/canastoo.svg"
               alt="logo tu almacen virtual"
               class="wLogo my-3"
             />
@@ -55,7 +56,9 @@
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link active text-white ms-3 fw-bold" href="admin.html"
+                <a
+                  class="nav-link active text-white ms-3 fw-bold"
+                  href="admin.html"
                   >Admin</a
                 >
               </li>
@@ -64,6 +67,7 @@
                   >Acerca de nosotros</a
                 >
               </li>
+              <li class="nav-item dropdown" id="desloguearAdministrador"></li>
             </ul>
           </div>
         </div>
@@ -73,10 +77,20 @@
       <section class="container">
         <h1 class="text-center p-4">Administrador de Productos</h1>
       </section>
-      <section class="container bgFormAdmin text-white my-5 textoCentrado rounded-3 border border-2">
+      <section
+        class="
+          container
+          bgFormAdmin
+          text-white
+          my-5
+          textoCentrado
+          rounded-3
+          border border-2
+        "
+      >
         <h2 class="text-center pt-3">Productos Varios</h2>
         <article class="d-flex justify-content-center">
-          <form class="p-3 wformulario"  id="formularioProducto">
+          <form class="p-3 wformulario" id="formularioProducto">
             <div class="mb-3">
               <label for="cagetoriaProducto" class="form-label fw-bold"
                 >Categoria</label
@@ -103,7 +117,9 @@
             </div>
 
             <div class="mb-3">
-              <label for="nombreProducto" class="form-label fw-bold">Producto</label>
+              <label for="nombreProducto" class="form-label fw-bold"
+                >Producto</label
+              >
               <input
                 id="nombreProducto"
                 type="text"
@@ -124,7 +140,9 @@
               />
             </div>
             <div class="mb-3">
-              <label for="cantidadProducto" class="form-label fw-bold">Cantidad</label>
+              <label for="cantidadProducto" class="form-label fw-bold"
+                >Cantidad</label
+              >
               <input
                 type="text"
                 class="form-control"
@@ -136,7 +154,10 @@
               </div>
             </div>
             <div class="mb-3">
-              <label for="urlProducto" class="form-label fw-bold" id="inputDisable"
+              <label
+                for="urlProducto"
+                class="form-label fw-bold"
+                id="inputDisable"
                 >URL</label
               >
               <input
@@ -157,8 +178,11 @@
           </form>
         </article>
       </section>
-      <section class="container ">
-        <article class="table-responsive">
+      <section class="container">
+        <button class="btn btn-primary" id="btnlimpiarFormulario">
+          Nuevo Producto
+        </button>
+        <article class="table-responsive pt-4">
           <table class="table rounded-3">
             <h1>Mix</h1>
             <thead>
@@ -175,7 +199,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table ">
+          <table class="table">
             <h1>Frutas Secas</h1>
             <thead>
               <tr>
@@ -191,7 +215,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table ">
+          <table class="table">
             <h1>Inflados</h1>
             <thead>
               <tr>
@@ -207,7 +231,7 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table ">
+          <table class="table">
             <h1>Especias</h1>
             <thead>
               <tr>
@@ -215,6 +239,7 @@
                 <th scope="col">Producto</th>
                 <th scope="col">Descripción</th>
                 <th scope="col">Cantidad</th>
+
                 <th scope="col" class="text-center">Acciones</th>
               </tr>
             </thead>
@@ -223,8 +248,10 @@
         </article>
         <hr />
         <article class="table-responsive">
-          <table class="table ">
-            <h2 class="fs-1">Usuarios <span><i class="fas fa-users"></i></span></h2>
+          <table class="table">
+            <h2 class="fs-1">
+              Usuarios <span><i class="fas fa-users"></i></span>
+            </h2>
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
@@ -237,8 +264,10 @@
           </table>
         </article>
         <article class="table-responsive">
-          <table class="table ">
-            <h2 class="fs-1">Empleados <span><i class="fas fa-people-carry"></i></span></h2>
+          <table class="table">
+            <h2 class="fs-1">
+              Empleados <span><i class="fas fa-people-carry"></i></span>
+            </h2>
             <thead>
               <tr>
                 <th scope="col">Nombre</th>
@@ -271,20 +300,23 @@
               <h5>Navegacion</h5>
               <div>
                 <ul class="navbar-nav mb-2">
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="index.html">Inicio</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="admin.html">Admin</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="admin.html">Ingresá</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link text-white" href="nosotros.html"
-                      >Acerca de nosotros</a
-                    >
-                  </li>
+                  <ul class="navbar-nav mb-2">
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="index.html"
+                        >Inicio</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Contactanos</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link text-white" href="error.html"
+                        >Opiniones</a
+                      >
+                    </li>
+                  </ul>
                 </ul>
               </div>
             </div>
