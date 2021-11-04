@@ -161,6 +161,9 @@ function limpiarFormulario() {
   nombreProducto.className = "form-control";
   descripcionProducto.className = "form-control";
   categoria.className = "form-control";
+  codigoForm.removeAttribute("disabled")
+  categoria.removeAttribute("disabled")
+  urlForm.removeAttribute("disabled")
 }
 
 //** Funcion para crear la fila en la tabla **//
