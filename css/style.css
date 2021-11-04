@@ -11,8 +11,14 @@
 /* Agregar efecto Neon */
 .verde {
   font-family: "Orbitron", sans-serif;
-  text-shadow: 0 0 5px #46ad30, 0 0 10px #46ad30, 0 0 20px #46ad30,
-    0 0 40px #46ad30, 0 0 80px #46ad30, 0 0 90px #46ad30, 0 0 100px #46ad30;
+  text-shadow: 0 0 5px white, 0 0 10px white, 0 0 20px white,
+    0 0 40px white, 0 0 80px white, 0 0 90px white, 0 0 100px white;
+  color: rgb(108, 55, 237);  
+}
+
+.colorFuente{
+  color: rgb(108, 55, 237);
+
 }
 
 /* Ahorcado */
@@ -92,6 +98,9 @@
   );
 }
 
+.bgError{
+  background-color: #44329296;
+}
 .wformulario{
   width: 85%;
 }
@@ -123,7 +132,7 @@ table {
 
 /* backGround Login/Create */
 .fondoLoginCreate {
-  background-color: rgba(50, 9, 199, 0.699);
+  background-color: rgba(94, 67, 192, 0.699);
   background-image: radial-gradient(
       white,
       rgba(255, 255, 255, 0.2) 2px,
